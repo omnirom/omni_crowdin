@@ -100,7 +100,9 @@ files:
     ignore:
       - /device/google/**/*.xml
       - /device/sample/**/*.xml
+      - /device/**/common-overlay/**/*.xml
       - /device/**/overlay/**/*.xml
+      - /device/**/overlay-common/**/*.xml
   -
     source:      '/device/**/values/plurals.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
@@ -108,7 +110,9 @@ files:
     ignore:
       - /device/google/**/*.xml
       - /device/sample/**/*.xml
+      - /device/**/common-overlay/**/*.xml
       - /device/**/overlay/**/*.xml
+      - /device/**/overlay-common/**/*.xml
   -
     source:      '/device/**/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
@@ -116,7 +120,9 @@ files:
     ignore:
       - /device/google/**/*.xml
       - /device/sample/**/*.xml
+      - /device/**/common-overlay/**/*.xml
       - /device/**/overlay/**/*.xml
+      - /device/**/overlay-common/**/*.xml
 
 # Other projects
 
