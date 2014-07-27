@@ -4,5 +4,21 @@
   <project name="android_packages_apps_SamsungServiceMode" path="packages/apps/SamsungServiceMode" remote="omnirom" revision="android-4.4" />
 
   <!-- Device repositories that can be translated -->
-  <!-- TODO -->
+  <project name="android_device_asus_me301t" path="device/asus/me301t" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_asus_tf101" path="device/asus/tf101" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_asus_tf300t" path="device/asus/tf300t" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_asus_tf700t" path="device/asus/tf700t" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_htc_m7-common" path="device/htc/m7-common" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_oppo_find5" path="device/oppo/find5" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_oppo_msm8974-common" path="device/oppo/msm8974-common" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_oppo_n1" path="device/oppo/n1" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_samsung_aries-common" path="device/samsung/aries-common" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_samsung_i9100g" path="device/samsung/i9100g" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_samsung_i9103" path="device/samsung/i9103" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_samsung_n80xx-common" path="device/samsung/n80xx-common" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_samsung_p1-common" path="device/samsung/p1-common" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_samsung_p3100" path="device/samsung/p3100" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_samsung_p5100" path="device/samsung/p5100" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_samsung_smdk4412-common" path="device/samsung/smdk4412-common" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_semc_mogami-common" path="device/semc/mogami-common" remote="omnirom" revision="android-4.4" />
 </manifest>
