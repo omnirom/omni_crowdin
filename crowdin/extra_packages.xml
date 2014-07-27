@@ -1,35 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- Extra packages not included in the main manifest
-       WARNING: Cid is not working yet for these repositories. -->
-  <project path="hardware/qcom/fm" name="CyanogenMod/android_hardware_qcom_fm" />
-  <project path="packages/apps/SamsungServiceMode" name="CyanogenMod/android_packages_apps_SamsungServiceMode" />
-
-  <project path="packages/apps/AudioFX" name="cyngn/android_packages_apps_AudioFX-resources" />
-  <project path="packages/apps/CameraNext" name="cyngn/android_packages_apps_Camera2-resources" />
-  <project path="packages/apps/CMFota" name="cyngn/android_packages_apps_FOTA-resources" revision="master" />
-  <project path="packages/apps/CMKeyguard" name="cyngn/android_packages_apps_CMKeyguard-resources" />
-  <project path="packages/apps/CMLogger" name="cyngn/android_packages_apps_CMLogger-resources" />
-  <project path="packages/apps/GalleryNext" name="cyngn/android_packages_apps_GalleryNext-resources" />
-  <project path="packages/apps/Screencast" name="cyngn/android_packages_apps_Screencast-resources" />
-  <project path="packages/apps/ThemeStore" name="cyngn/android_packages_apps_ThemeStore-resources" />
-  <project path="packages/apps/VoiceWakeup" name="cyngn/android_packages_apps_VoiceWakeup-resources" />
-
-  <project path="packages/apps/OneClickAndroid" name="cyngn/OneClickAndroid" revision="master" />
+  <!-- Extra packages not included in the main manifest -->
+  <project name="android_packages_apps_SamsungServiceMode" path="packages/apps/SamsungServiceMode" remote="omnirom" revision="android-4.4" />
 
   <!-- Device repositories that can be translated -->
-  <project path="device/asus/tf300t" name="CyanogenMod/android_device_asus_tf300t" />
-  <project path="device/asus/tf700t" name="CyanogenMod/android_device_asus_tf700t" />
-  <project path="device/bn/acclaim" name="CyanogenMod/android_device_bn_acclaim" />
-  <project path="device/bn/common" name="CyanogenMod/android_device_bn_common" />
-  <project path="device/motorola/xt897" name="CyanogenMod/android_device_motorola_xt897" />
-  <project path="device/oppo/common" name="CyanogenMod/android_device_oppo_common" />
-  <project path="device/samsung/apexqtmo" name="CyanogenMod/android_device_samsung_apexqtmo" />
-  <project path="device/samsung/aries-common" name="CyanogenMod/android_device_samsung_aries-common" />
-  <project path="device/samsung/galaxys2-common" name="CyanogenMod/android_device_samsung_galaxys2-common" />
-  <project path="device/samsung/p1-common" name="CyanogenMod/android_device_samsung_p1-common" />
-
-  <!-- Website translations -->
-  <project path="website/getcm-translations" name="CyanogenMod/getcm-translations" revision="master" />
-  <project path="website/CMAccountWebsite" name="CyanogenMod/CMAccountWebsite" revision="master" />
+  <!-- TODO -->
 </manifest>

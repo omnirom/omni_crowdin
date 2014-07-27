@@ -1,8 +1,9 @@
-# config_cm.yaml
+# config_omni.yaml
 #
-# Crowdin configuration file for CyanogenMod
+# Crowdin configuration file for OmniROM
 #
 # Copyright (C) 2014 The CyanogenMod Project
+# Modifications Copyright (C) 2014 OmniROM
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

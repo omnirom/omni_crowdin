@@ -1,18 +1,18 @@
-cm_crowdin_sync.py
+crowdin_sync.py
 ==================
 
 Introduction
 ------------
-This script is used to synchronize CyanogenMod's translations with Crowdin's. It automatically creates cm_caf.xml files, containing
-CAF additions that cannot be seperated in CM source, based on the AOSP base file, and removes them after the push. Also, it can handle
-automatic commiting to Git and pushing/downloading to/from Crowdin.
+This script is used to synchronize OmniROM's translations with Crowdin's. Also, it can handle
+automatic commiting to Gerrit and pushing/downloading to/from Crowdin. It's based on CM's sync
+script maintained by Michael Bestas & Marco Brohet.
 
 Prerequisites
 -------------
 The Ruby variant of crowdin-cli is required for this to work.
 
     \curl -sSL https://get.rvm.io | bash -s stable --ruby
-    source /home/therbom/.rvm/scripts/rvm # Add this to your .bashrc file!
+    source /home/your_username/.rvm/scripts/rvm # Add this to your .bashrc file!
     rvm all do gem install crowdin-cli
 
 python-git is used for Git integration.
@@ -23,22 +23,11 @@ The script is currently only python2 supported.
 
 Executing
 ---------
-Go to root of your local copy of CyanogenMod's source code and execute:
+Go to root of your local copy of OmniROM's source code and execute:
 
-    ./cm_crowdin_sync.py
+    ./crowdin_sync.py
 
 Bugs
 ----
  - When committing fails, the reason of it cannot be determined. Often this is just when there
    are no new translations, so the script will not exit when this happens.
-
-Submitting changes
-------------------
-This repository is preconfigured to use the git-review plugin. More information can be found at:
-https://pypi.python.org/pypi/git-review
-
-You can upload your change to gerrit with commands like these:
-
-    git add *
-    git commit
-    git review
