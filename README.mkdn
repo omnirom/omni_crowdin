@@ -23,9 +23,11 @@ The script is currently only python2 supported.
 
 Executing
 ---------
-Go to root of your local copy of OmniROM's source code and execute:
+Copy all files to the root of your local copy of OmniROM's source code.
+Edit crowdin/config_omni.yaml to set the api key & your current OmniROM path.
+Execute:
 
-    ./crowdin_sync.py
+    ./crowdin_sync.py --username your_gerrit_username
 
 Bugs
 ----
