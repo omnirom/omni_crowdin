@@ -1,0 +1,5 @@
+[gerrit]
+host=gerrit.omnirom.org
+port=29418
+project=omni_crowdin
+defaultbranch=android-4.4
