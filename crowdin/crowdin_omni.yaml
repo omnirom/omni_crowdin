@@ -87,6 +87,7 @@ files:
       - /frameworks/base/core/res/res/values/custom_arrays.xml
       - /frameworks/base/packages/SystemUI/res/values/custom_arrays.xml
       - /packages/apps/Camera2/res/values/custom_arrays.xml
+      - /packages/apps/DeskClock/res/values/custom_arrays.xml
       - /packages/apps/OmniGears/res/values/custom_arrays.xml
       - /packages/services/Telephony/res/values/custom_arrays.xml
       - /device/**/overlay/**/*.xml
@@ -100,6 +101,8 @@ files:
     ignore:
       - /device/google/**/*.xml
       - /device/sample/**/*.xml
+      - /device/samsung/p3100/DeviceSettings/res/values/arrays.xml
+      - /device/samsung/p5100/DeviceSettings/res/values/arrays.xml
       - /device/**/common-overlay/**/*.xml
       - /device/**/overlay/**/*.xml
       - /device/**/overlay-common/**/*.xml
