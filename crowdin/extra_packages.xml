@@ -21,4 +21,5 @@
   <project name="android_device_samsung_p5100" path="device/samsung/p5100" remote="omnirom" revision="android-4.4" />
   <project name="android_device_samsung_smdk4412-common" path="device/samsung/smdk4412-common" remote="omnirom" revision="android-4.4" />
   <project name="android_device_semc_mogami-common" path="device/semc/mogami-common" remote="omnirom" revision="android-4.4" />
+  <project name="android_device_semc_msm7x30-common" path="device/semc/msm7x30-common" remote="omnirom" revision="android-4.4" />
 </manifest>
