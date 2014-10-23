@@ -1,4 +1,4 @@
-# crowdin_omni.yaml
+# crowdin_android-4.4.yaml
 #
 # Crowdin configuration file for OmniROM
 #
@@ -23,7 +23,7 @@ preserve_hierarchy: true
 files:
   # Default for AOSP projects with custom additions
   -
-    source:      '/**/values/custom_*.xml'
+    source: '/android-4.4/**/values/custom_*.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: &anchor
       android_code:
@@ -79,97 +79,97 @@ files:
         vi: vi
         zu: zu
     ignore:
-      - /**/custom_attrs.xml
-      - /**/custom_dimens.xml
-      - /**/custom_donottranslate.xml
-      - /**/custom_integers.xml
-      - /**/custom_styles.xml
-      - /frameworks/base/core/res/res/values/custom_arrays.xml
-      - /frameworks/base/packages/SystemUI/res/values/custom_arrays.xml
-      - /packages/apps/Camera2/res/values/custom_arrays.xml
-      - /packages/apps/DeskClock/res/values/custom_arrays.xml
-      - /packages/apps/OmniGears/res/values/custom_arrays.xml
-      - /packages/services/Telephony/res/values/custom_arrays.xml
-      - /device/**/overlay/**/*.xml
-      - /development/**/*.xml
+      - /android-4.4/**/custom_attrs.xml
+      - /android-4.4/**/custom_dimens.xml
+      - /android-4.4/**/custom_donottranslate.xml
+      - /android-4.4/**/custom_integers.xml
+      - /android-4.4/**/custom_styles.xml
+      - /android-4.4/frameworks/base/core/res/res/values/custom_arrays.xml
+      - /android-4.4/frameworks/base/packages/SystemUI/res/values/custom_arrays.xml
+      - /android-4.4/packages/apps/Camera2/res/values/custom_arrays.xml
+      - /android-4.4/packages/apps/DeskClock/res/values/custom_arrays.xml
+      - /android-4.4/packages/apps/OmniGears/res/values/custom_arrays.xml
+      - /android-4.4/packages/services/Telephony/res/values/custom_arrays.xml
+      - /android-4.4/device/**/overlay/**/*.xml
+      - /android-4.4/development/**/*.xml
 
   # Default for device apps
   -
-    source:      '/device/**/values/arrays.xml'
+    source: '/android-4.4/device/**/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
     ignore:
-      - /device/google/**/*.xml
-      - /device/sample/**/*.xml
-      - /device/samsung/p3100/DeviceSettings/res/values/arrays.xml
-      - /device/samsung/p5100/DeviceSettings/res/values/arrays.xml
-      - /device/**/common-overlay/**/*.xml
-      - /device/**/overlay/**/*.xml
-      - /device/**/overlay-common/**/*.xml
+      - /android-4.4/device/google/**/*.xml
+      - /android-4.4/device/sample/**/*.xml
+      - /android-4.4/device/samsung/p3100/DeviceSettings/res/values/arrays.xml
+      - /android-4.4/device/samsung/p5100/DeviceSettings/res/values/arrays.xml
+      - /android-4.4/device/**/common-overlay/**/*.xml
+      - /android-4.4/device/**/overlay/**/*.xml
+      - /android-4.4/device/**/overlay-common/**/*.xml
   -
-    source:      '/device/**/values/plurals.xml'
+    source: '/android-4.4/device/**/values/plurals.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
     ignore:
-      - /device/google/**/*.xml
-      - /device/sample/**/*.xml
-      - /device/**/common-overlay/**/*.xml
-      - /device/**/overlay/**/*.xml
-      - /device/**/overlay-common/**/*.xml
+      - /android-4.4/device/google/**/*.xml
+      - /android-4.4/device/sample/**/*.xml
+      - /android-4.4/device/**/common-overlay/**/*.xml
+      - /android-4.4/device/**/overlay/**/*.xml
+      - /android-4.4/device/**/overlay-common/**/*.xml
   -
-    source:      '/device/**/values/strings.xml'
+    source: '/android-4.4/device/**/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
     ignore:
-      - /device/google/**/*.xml
-      - /device/sample/**/*.xml
-      - /device/**/common-overlay/**/*.xml
-      - /device/**/overlay/**/*.xml
-      - /device/**/overlay-common/**/*.xml
+      - /android-4.4/device/google/**/*.xml
+      - /android-4.4/device/sample/**/*.xml
+      - /android-4.4/device/**/common-overlay/**/*.xml
+      - /android-4.4/device/**/overlay/**/*.xml
+      - /android-4.4/device/**/overlay-common/**/*.xml
 
 # Other projects
 
   # WallpaperCropper
   -
-    source:      '/frameworks/base/packages/WallpaperCropper/res/values/strings.xml'
+    source: '/android-4.4/frameworks/base/packages/WallpaperCropper/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   # Apollo
   -
-    source:      '/packages/apps/Apollo/res/values/strings.xml'
+    source: '/android-4.4/packages/apps/Apollo/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/packages/apps/Apollo/res/values/plurals.xml'
+    source: '/android-4.4/packages/apps/Apollo/res/values/plurals.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   # DSPManager
   -
-    source:      '/packages/apps/DSPManager/res/values/strings.xml'
+    source: '/android-4.4/packages/apps/DSPManager/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/packages/apps/DSPManager/res/values/arrays.xml'
+    source: '/android-4.4/packages/apps/DSPManager/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   # OmniTorch
   -
-    source:      '/packages/apps/OmniTorch/res/values/strings.xml'
+    source: '/android-4.4/packages/apps/OmniTorch/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   # UserDictionaryProvider
   -
-    source:      '/packages/providers/UserDictionaryProvider/res/values/strings.xml'
+    source: '/android-4.4/packages/providers/UserDictionaryProvider/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   # Galaxy4
   -
-    source:      '/packages/wallpapers/Galaxy4/res/values/strings.xml'
+    source: '/android-4.4/packages/wallpapers/Galaxy4/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
@@ -177,6 +177,6 @@ files:
 
   # SamsungServiceMode
   -
-    source:      '/packages/apps/SamsungServiceMode/res/values/strings.xml'
+    source: '/android-4.4/packages/apps/SamsungServiceMode/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
