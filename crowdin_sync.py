@@ -82,7 +82,7 @@ username = args['username']
 
 ############################################## STEP 0 ##############################################
 
-print('\nSTEP 0: Checking dependencies')
+print('\nSTEP 0: Checking dependencies & define shared variables')
 # Check for Ruby version of crowdin-cli
 if subprocess.check_output(['rvm', 'all', 'do', 'gem', 'list', 'crowdin-cli', '-i']) == 'true':
     sys.exit('You have not installed crowdin-cli. Terminating.')
@@ -101,35 +101,43 @@ if not os.path.isfile('android/default.xml'):
 else:
     print('Found: android/default.xml')
 
-# Check for crowdin/config_omni.yaml
-if not os.path.isfile('crowdin/config_omni.yaml'):
-    sys.exit('You have no crowdin/config_omni.yaml. Terminating.')
-else:
-    print('Found: crowdin/config_omni.yaml')
+# Variables regarding android/default.xml
+print('Loading: android/default.xml')
+xml_android = minidom.parse('android/default.xml')
 
-# Check for crowdin/crowdin_omni.yaml
-if not os.path.isfile('crowdin/crowdin_omni.yaml'):
-    sys.exit('You have no crowdin/crowdin_omni.yaml. Terminating.')
-else:
-    print('Found: crowdin/crowdin_omni.yaml')
+# Default branch
+default_branch = 'android-4.4'
+print('Default branch: ' + default_branch)
 
 # Check for crowdin/extra_packages.xml
-if not os.path.isfile('crowdin/extra_packages.xml'):
-    sys.exit('You have no crowdin/extra_packages.xml. Terminating.')
+if not os.path.isfile('crowdin/extra_packages_' + default_branch + '.xml'):
+    sys.exit('You have no crowdin/extra_packages_' + default_branch + '.xml. Terminating.')
 else:
-    print('Found: crowdin/extra_packages.xml')
+    print('Found: crowdin/extra_packages_' + default_branch + '.xml')
+
+# Check for crowdin/config.yaml
+if not os.path.isfile('crowdin/config.yaml'):
+    sys.exit('You have no crowdin/config.yaml. Terminating.')
+else:
+    print('Found: crowdin/config.yaml')
+
+# Check for crowdin/crowdin_' + default_branch + '.yaml
+if not os.path.isfile('crowdin/crowdin_' + default_branch + '.yaml'):
+    sys.exit('You have no crowdin/crowdin_' + default_branch + '.yaml. Terminating.')
+else:
+    print('Found: crowdin/crowdin_' + default_branch + '.yaml')
 
 ############################################## STEP 1 ##############################################
 
 print('\nSTEP 1: Upload Crowdin source translations')
 # Execute 'crowdin-cli upload sources' and show output
-print(subprocess.check_output(['crowdin-cli', '--config=crowdin/crowdin_omni.yaml', '--identity=crowdin/config_omni.yaml', 'upload', 'sources']))
+print(subprocess.check_output(['crowdin-cli', '--config=crowdin/crowdin_' + default_branch + '.yaml', '--identity=crowdin/config.yaml', 'upload', 'sources']))
 
 ############################################## STEP 2 ##############################################
 
 print('\nSTEP 2: Download Crowdin translations')
 # Execute 'crowdin-cli download' and show output
-print(subprocess.check_output(['crowdin-cli', '--config=crowdin/crowdin_omni.yaml', '--identity=crowdin/config_omni.yaml', 'download']))
+print(subprocess.check_output(['crowdin-cli', '--config=crowdin/crowdin_' + default_branch + '.yaml', '--identity=crowdin/config.yaml', 'download']))
 
 ############################################## STEP 3 ##############################################
 
@@ -148,14 +156,13 @@ for xml_file in result:
 
 print('\nSTEP 4: Create a list of pushable translations')
 # Get all files that Crowdin pushed
-proc = subprocess.Popen(['crowdin-cli --config=crowdin/crowdin_omni.yaml --identity=crowdin/config_omni.yaml list sources'], stdout=subprocess.PIPE, shell=True)
+proc = subprocess.Popen(['crowdin-cli --config=crowdin/crowdin_' + default_branch + '.yaml --identity=crowdin/config.yaml list sources | grep "' + default_branch + '" | sed "s#/' + default_branch + '##g"'], stdout=subprocess.PIPE, shell=True)
 proc.wait() # Wait for the above to finish
 
 ############################################## STEP 5 ##############################################
 
 print('\nSTEP 5: Commit to Gerrit')
-xml_android = minidom.parse('android/default.xml')
-xml_extra = minidom.parse('crowdin/extra_packages.xml')
+xml_extra = minidom.parse('crowdin/extra_packages_' + default_branch + '.xml')
 items = xml_android.getElementsByTagName('project')
 items += xml_extra.getElementsByTagName('project')
 all_projects = []
@@ -190,7 +197,7 @@ for path in iter(proc.stdout.readline,''):
     # and check if it's already in there.
     all_projects.append(result)
 
-    # Search in android/default.xml or crowdin/extra_packages.xml for the project's name
+    # Search in android/default.xml or crowdin/extra_packages_' + default_branch + ' for the project's name
     for project_item in items:
         if project_item.attributes['path'].value != result:
             # No match found, go to next item
@@ -200,7 +207,7 @@ for path in iter(proc.stdout.readline,''):
         if project_item.hasAttribute('revision'):
             branch = project_item.attributes['revision'].value
         else:
-            branch = 'android-4.4'
+            branch = default_branch
 
         push_as_commit(result, project_item.attributes['name'].value, branch, username)
 
