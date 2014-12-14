@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eb3671c6_6c6613ba",
+        "filename": "crowdin_sync.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000551
+      },
+      "writtenOn": "2014-12-14T22:26:19Z",
+      "side": 1,
+      "message": "\"proc.wait() # Wait for the above to finish\" -\u003e new line",
+      "range": {
+        "startLine": 159,
+        "startChar": 238,
+        "endLine": 159,
+        "endChar": 280
+      },
+      "revId": "31ca40a1ac1881201a3c4b7b2f8faae4f8bf85b1",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
