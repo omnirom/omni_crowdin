@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eb3671c6_6c4d333e",
+        "filename": "crowdin_sync.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000173
+      },
+      "writtenOn": "2014-12-14T19:29:58Z",
+      "side": 1,
+      "message": "This doesn\u0027t look right",
+      "range": {
+        "startLine": 134,
+        "startChar": 72,
+        "endLine": 134,
+        "endChar": 79
+      },
+      "revId": "bda97803081bd78505625310d2ea9764243c29a5",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
