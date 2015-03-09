@@ -72,10 +72,6 @@ def push_as_commit(path, name, branch, username):
 
 ####################################################################################################
 
-print('Welcome to the OmniROM Crowdin sync script!')
-
-####################################################################################################
-
 sync = parser.add_mutually_exclusive_group()
 parser.add_argument('-u', '--username', help='Gerrit username', required=True)
 sync.add_argument('--no-upload', action='store_true', help='Only download OmniRom translations from Crowdin')
@@ -86,6 +82,10 @@ argsdict = vars(args)
 
 username = argsdict['username']
 default_branch = argsdict['branch']
+
+####################################################################################################
+
+print('Welcome to the OmniROM Crowdin sync script!')
 
 ############################################# PREPARE ##############################################
 
