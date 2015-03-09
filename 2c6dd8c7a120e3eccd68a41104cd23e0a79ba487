@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b22818b_13868ee1",
+        "filename": "crowdin_sync.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000551
+      },
+      "writtenOn": "2015-03-09T21:38:09Z",
+      "side": 1,
+      "message": ".yaml missing",
+      "range": {
+        "startLine": 159,
+        "startChar": 85,
+        "endLine": 159,
+        "endChar": 86
+      },
+      "revId": "2c6dd8c7a120e3eccd68a41104cd23e0a79ba487",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
