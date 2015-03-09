@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b22818b_f31bb2d1",
+        "filename": "crowdin_sync.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000551
+      },
+      "writtenOn": "2015-03-09T21:30:11Z",
+      "side": 1,
+      "message": "whitespace in front need to be removed",
+      "revId": "0b7ad60633ea826888b1394010d5f8b01b577e43",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
