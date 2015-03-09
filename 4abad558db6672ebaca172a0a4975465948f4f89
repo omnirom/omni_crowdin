@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b22818b_b3493ad5",
+        "filename": "crowdin_sync.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000551
+      },
+      "writtenOn": "2015-03-09T21:29:11Z",
+      "side": 1,
+      "message": "parser \u003d argparse.ArgumentParser(description\u003d\u0027Synchronising OmniROM\\\u0027s translations with Crowdin\u0027)",
+      "revId": "4abad558db6672ebaca172a0a4975465948f4f89",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
