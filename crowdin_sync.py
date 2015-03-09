@@ -69,6 +69,13 @@ def push_as_commit(path, name, branch, username):
     except:
         print('Failed to push commit for ' + name)
 
+def run_command(cmd):
+    p = subprocess.Popen(cmd, stdout=sys.stdout, stderr=sys.stderr)
+    ret = p.wait()
+    if ret != 0:
+        print('Failed to run cmd: %s' % ' '.join(cmd))
+        sys.exit(ret)
+
 ####################################################################################################
 
 parser = argparse.ArgumentParser(description='Synchronising OmniROM\'s translations with Crowdin')
@@ -136,7 +143,7 @@ if not args.no_upload:
     print('\nSTEP 1: Upload Crowdin source translations')
     print('Uploading Crowdin source translations (AOSP supported languages)')
     # Execute 'crowdin-cli upload sources' and show output
-    print(subprocess.check_output(['crowdin-cli', '--config=crowdin/crowdin_' + default_branch + '.yaml', '--identity=crowdin/config.yaml', 'upload', 'sources']))
+    run_command(['crowdin-cli', '--config=crowdin/crowdin_' + default_branch + '.yaml', '--identity=crowdin/config.yaml', 'upload', 'sources'])
 else:
     print('\nSkipping source translations upload')
 
@@ -144,7 +151,7 @@ if not args.no_download:
     print('\nSTEP 2: Download Crowdin translations')
     print('Downloading Crowdin translations (AOSP supported languages)')
     # Execute 'crowdin-cli download' and show output
-    print(subprocess.check_output(['crowdin-cli', '--config=crowdin/crowdin_' + default_branch + '.yaml', '--identity=crowdin/config.yaml', 'download']))
+    run_command(['crowdin-cli', '--config=crowdin/crowdin_' + default_branch + '.yaml', '--identity=crowdin/config.yaml', 'download'])
 
     print('\nSTEP 3: Remove useless empty translations')
     # Some line of code that I found to find all XML files
