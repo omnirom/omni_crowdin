@@ -80,10 +80,12 @@ sync = parser.add_mutually_exclusive_group()
 parser.add_argument('-u', '--username', help='Gerrit username', required=True)
 sync.add_argument('--no-upload', action='store_true', help='Only download OmniROM translations from Crowdin')
 sync.add_argument('--no-download', action='store_true', help='Only upload OmniROM source translations to Crowdin')
+parser.add_argument('-b', '--branch', help='OmniROM branch', required=True)
 args = parser.parse_args()
 argsdict = vars(args)
 
 username = argsdict['username']
+default_branch = argsdict['branch']
 
 ############################################# PREPARE ##############################################
 
@@ -109,10 +111,6 @@ else:
 # Variables regarding android/default.xml
 print('Loading: android/default.xml')
 xml_android = minidom.parse('android/default.xml')
-
-# Default branch
-default_branch = 'android-4.4'
-print('Default branch: ' + default_branch)
 
 # Check for crowdin/extra_packages.xml
 if not os.path.isfile('crowdin/extra_packages_' + default_branch + '.xml'):
