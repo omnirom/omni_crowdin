@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b22818b_5359e68e",
+        "filename": "crowdin/crowdin_android-4.4.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000551
+      },
+      "writtenOn": "2015-03-09T22:34:23Z",
+      "side": 1,
+      "message": "custum_strings.xml\n\n\nelse:\nUploading source file `/android-4.4/frameworks/base/core/res/res/values/custom_arrays.xml\u0027 - OK\nUploading source file `/android-4.4/frameworks/base/core/res/res/values/custom_dimens.xml\u0027 - OK\nUploading source file `/android-4.4/frameworks/base/core/res/res/values/custom_extra.xml\u0027 - OK",
+      "range": {
+        "startLine": 28,
+        "startChar": 74,
+        "endLine": 28,
+        "endChar": 76
+      },
+      "revId": "69d2bb5471c8d2e326c301fcc5b9852b13c50b01",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
