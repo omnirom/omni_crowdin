@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Extra packages not included in the main manifest -->
+  <project name="android_packages_apps_SamsungServiceMode" path="packages/apps/SamsungServiceMode" remote="omnirom" revision="android-5.1" />
+
+  <!-- Device repositories that can be translated -->
+
+  <!-- DEVICE PACKAGES NEED TO BE ADDED LATER -->
+</manifest>
