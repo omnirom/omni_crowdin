@@ -139,12 +139,6 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
- # OmniTorch
-  -
-    source:      '/android-5.0/packages/apps/OmniTorch/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
  # OpenDelta
   -
     source:      '/android-5.0/packages/apps/OpenDelta/res/values/strings.xml'
@@ -160,21 +154,5 @@ files:
  # Settings
   -
     source:      '/android-5.0/packages/apps/Settings/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
-# providers
-
- # UserDictionaryProvider
-  -
-    source:      '/android-5.0/packages/providers/UserDictionaryProvider/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
-# wallpapers
-
- # Galaxy4
-  -
-    source:      '/android-5.0/packages/wallpapers/Galaxy4/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor

@@ -202,25 +202,11 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
- # UserDictionaryProvider
-  -
-    source:      '/android-4.4/packages/providers/UserDictionaryProvider/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
 # services
 
  # Telephony
   -
     source:      '/android-4.4/packages/services/Telephony/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
-# wallpapers
-
- # Galaxy4
-  -
-    source:      '/android-4.4/packages/wallpapers/Galaxy4/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
