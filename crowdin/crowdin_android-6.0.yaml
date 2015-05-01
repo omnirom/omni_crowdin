@@ -16,6 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+api_key_env: OMNI_CROWDIN_API_KEY
+base_path_env: OMNI_CROWDIN_BASE_PATH
 project_identifier: OmniROM
 preserve_hierarchy: true
 
