@@ -150,3 +150,12 @@ files:
     source:      '/android-5.1/packages/apps/Settings/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
+
+
+# DeviceSettings
+
+ # smdk4412-common
+  -
+    source:      '/android-5.1/device/samsung/smdk4412-common/DeviceSettings/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
