@@ -79,6 +79,10 @@ files:
         uk: uk
         vi: vi
         zu: zu
+    ignore:
+      - /android-5.1/external/chromium_org/chrome/android/java/res/values/strings.xml
+      - /android-5.1/external/chromium_org/content/public/android/java/res/values/strings.xml
+      - /android-5.1/external/chromium_org/ui/android/java/res/values/strings.xml
 
  # DocumentsUI
   -
