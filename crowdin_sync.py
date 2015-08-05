@@ -113,6 +113,7 @@ def parse_args():
                         required=True)
     parser.add_argument('-b', '--branch', help='OmniROM branch',
                         required=True)
+    parser.add_argument('-c', '--config', help='Custom yaml config')
     sync.add_argument('--no-upload', action='store_true',
                       help='Only download OmniROM translations from Crowdin')
     sync.add_argument('--no-download', action='store_true',
@@ -142,11 +143,7 @@ def load_xml(x):
         return None
 
 
-def check_files(branch):
-    files = ['%s/crowdin/extra_packages_%s.xml' % (_DIR, branch),
-             '%s/crowdin/crowdin_%s.yaml' % (_DIR, branch)
-             ]
-    for f in files:
+def check_files(files):
         if not os.path.isfile(f):
             print('You have no %s.' % f, file=sys.stderr)
             return False
@@ -154,25 +151,41 @@ def check_files(branch):
 
 # ################################### MAIN ################################### #
 
-def upload_crowdin(branch, no_upload=False):
+def upload_crowdin(branch, config, no_upload=False):
     if no_upload:
         print('Skipping source translations upload')
         return
 
-    print('\nUploading Crowdin source translations (AOSP supported languages)')
-    check_run(['crowdin-cli',
-               '--config=%s/crowdin/crowdin_%s.yaml' % (_DIR, branch),
-               'upload', 'sources', '--branch=%s' % branch])
+    if config:
+        print('\nUploading Crowdin source translations (custom config)')
+        check_run(['crowdin-cli',
+                   '--config=%s/crowdin/%s' % (_DIR, config),
+                   'upload', 'sources', '--branch=%s' % branch])
+    else:
+        print('\nUploading Crowdin source translations '
+              '(AOSP supported languages)')
+        check_run(['crowdin-cli',
+                   '--config=%s/crowdin/crowdin_%s.yaml' % (_DIR, branch),
+                   'upload', 'sources', '--branch=%s' % branch])
 
-def download_crowdin(base_path, branch, xml, username, no_download=False):
+
+def download_crowdin(base_path, branch, xml, username, config,
+                     no_download=False):
     if no_download:
         print('Skipping translations download')
         return
 
-    print('\nDownloading Crowdin translations (AOSP supported languages)')
-    check_run(['crowdin-cli',
-               '--config=%s/crowdin/crowdin_%s.yaml' % (_DIR, branch),
-               'download', '--branch=%s' % branch])
+    if config:
+        print('\nDownloading Crowdin translations (custom config)')
+        check_run(['crowdin-cli',
+                   '--config=%s/crowdin/%s' % (_DIR, config),
+                   'download', '--branch=%s' % branch])
+    else:
+        print('\nDownloading Crowdin translations (AOSP supported languages)')
+        check_run(['crowdin-cli',
+                   '--config=%s/crowdin/crowdin_%s.yaml' % (_DIR, branch),
+                   'download', '--branch=%s' % branch])
+
 
     print('\nRemoving useless empty translation files')
     empty_contents = {
@@ -198,9 +211,11 @@ def download_crowdin(base_path, branch, xml, username, no_download=False):
     print('\nCreating a list of pushable translations')
     # Get all files that Crowdin pushed
     paths = []
-    files = [
-         ('%s/crowdin/crowdin_%s.yaml' % (_DIR, branch))
-    ]
+    if config:
+        files = ['%s/crowdin/%s' % (_DIR, config)]
+    else:
+        files = ['%s/crowdin/crowdin_%s.yaml' % (_DIR, branch)
+                ]
     for c in files:
         cmd = ['crowdin-cli', '--config=%s' % c, 'list', 'project',
                '--branch=%s' % branch]
@@ -285,12 +300,17 @@ def main():
     if xml_extra is None:
         sys.exit(1)
 
-    if not check_files(default_branch):
+    if args.config:
+        files = ['%s/crowdin/%s' % (_DIR, args.config)]
+    else:
+        files = ['%s/crowdin/crowdin_%s.yaml' % (_DIR, default_branch)
+                 ]
+    if not check_files(files):
         sys.exit(1)
 
-    upload_crowdin(default_branch, args.no_upload)
+    upload_crowdin(default_branch, args.config, args.no_upload)
     download_crowdin(base_path, default_branch, (xml_android, xml_extra),
-                     args.username, args.no_download)
+                     args.username, args.config, args.no_download)
 
     if _COMMITS_CREATED:
         print('\nDone!')
