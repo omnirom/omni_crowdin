@@ -154,15 +154,9 @@ files:
 
 # DeviceSettings
 
- # Samsung Galaxy Tab 2 7.0
+ # Samsung Galaxy Tab 2
   -
-    source:      '/android-5.1/device/samsung/p3100/DeviceSettings/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
- # Samsung Galaxy Tab 2 10.1
-  -
-    source:      '/android-5.1/device/samsung/p5100/DeviceSettings/res/values/strings.xml'
+    source:      '/android-5.1/device/samsung/espresso-common/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
