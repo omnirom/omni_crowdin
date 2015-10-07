@@ -6,5 +6,6 @@
   <!-- Device repositories that can be translated -->
   <project name="android_device_samsung_espresso-common" path="device/samsung/espresso-common" remote="omnirom" revision="android-5.1" />
   <project name="android_device_samsung_smdk4412-common" path="device/samsung/smdk4412-common" remote="omnirom" revision="android-5.1" />
+  <project name="android_device_sony_fusion3-common" path="device/sony/fusion3-common" remote="omnirom" revision="android-5.1" />
 
 </manifest>

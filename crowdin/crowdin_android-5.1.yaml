@@ -165,3 +165,9 @@ files:
     source:      '/android-5.1/device/samsung/smdk4412-common/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
+
+ # fusion3-common
+  -
+    source:      '/android-5.1/device/sony/fusion3-common/XperiaSettings/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
