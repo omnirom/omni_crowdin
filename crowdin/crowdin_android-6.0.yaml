@@ -18,6 +18,7 @@
 
 api_key_env: OMNI_CROWDIN_API_KEY
 base_path_env: OMNI_CROWDIN_BASE_PATH
+base_path_contains_branch_subfolders: true
 project_identifier: OmniROM
 preserve_hierarchy: true
 
@@ -26,7 +27,7 @@ files:
 
  # framework-res
   -
-    source:      '/android-6.0/frameworks/base/core/res/res/values/custom_strings.xml'
+    source:      '/frameworks/base/core/res/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: &anchor
       android_code:
@@ -84,13 +85,13 @@ files:
 
  # DocumentsUI
   -
-    source:      '/android-6.0/frameworks/base/packages/DocumentsUI/res/values/custom_strings.xml'
+    source:      '/frameworks/base/packages/DocumentsUI/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # SystemUI
   -
-    source:      '/android-6.0/frameworks/base/packages/SystemUI/res/values/custom_strings.xml'
+    source:      '/frameworks/base/packages/SystemUI/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
@@ -99,79 +100,79 @@ files:
 
  # Apollo
   -
-    source:      '/android-6.0/packages/apps/Apollo/res/values/plurals.xml'
+    source:      '/packages/apps/Apollo/res/values/plurals.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-6.0/packages/apps/Apollo/res/values/strings.xml'
+    source:      '/packages/apps/Apollo/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # Camera2
   -
-    source:      '/android-6.0/packages/apps/Camera2/res/values/custom_strings.xml'
+    source:      '/packages/apps/Camera2/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # DeskClock
   -
-    source:      '/android-6.0/packages/apps/DeskClock/res/values/custom_strings.xml'
+    source:      '/packages/apps/DeskClock/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # DSPManager
   -
-    source:      '/android-6.0/packages/apps/DSPManager/res/values/arrays.xml'
+    source:      '/packages/apps/DSPManager/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-6.0/packages/apps/DSPManager/res/values/strings.xml'
+    source:      '/packages/apps/DSPManager/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # Launcher3
   -
-    source:      '/android-6.0/packages/apps/Launcher3/res/values/custom_strings.xml'
+    source:      '/packages/apps/Launcher3/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # OmniGears
   -
-    source:      '/android-6.0/packages/apps/OmniGears/res/values/custom_strings.xml'
+    source:      '/packages/apps/OmniGears/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # OmniJaws
   -
-    source:      '/android-6.0/packages/services/OmniJaws/res/values/strings.xml'
+    source:      '/packages/services/OmniJaws/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # OmniSwitch
   -
-    source:      '/android-6.0/packages/apps/OmniSwitch/res/values/strings.xml'
+    source:      '/packages/apps/OmniSwitch/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # OpenDelta
   -
-    source:      '/android-6.0/packages/apps/OpenDelta/res/values/strings.xml'
+    source:      '/packages/apps/OpenDelta/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # Settings
   -
-    source:      '/android-6.0/packages/apps/Settings/res/values/custom_strings.xml'
+    source:      '/packages/apps/Settings/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # SnapdragonCamera
   -
-    source:      '/android-6.0/packages/apps/SnapdragonCamera/res/values/strings.xml'
+    source:      '/packages/apps/SnapdragonCamera/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-6.0/packages/apps/SnapdragonCamera/res/values/qcomstrings.xml'
+    source:      '/packages/apps/SnapdragonCamera/res/values/qcomstrings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 

@@ -9,7 +9,7 @@ script maintained by Michael Bestas & Marco Brohet.
 
 Prerequisites
 -------------
-The Ruby variant of crowdin-cli is required for this to work.
+The Ruby variant of crowdin-cli >= 0.5.2 is required for this to work.
 
     \curl -sSL https://get.rvm.io | bash -s stable --ruby
     source /home/your_username/.rvm/scripts/rvm # Add this to your .bashrc file!

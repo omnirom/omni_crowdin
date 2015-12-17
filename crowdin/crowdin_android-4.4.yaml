@@ -19,6 +19,7 @@
 
 api_key_env: OMNI_CROWDIN_API_KEY
 base_path_env: OMNI_CROWDIN_BASE_PATH
+base_path_contains_branch_subfolders: true
 project_identifier: OmniROM
 preserve_hierarchy: true
 
@@ -27,7 +28,7 @@ files:
 
  # framework-res
   -
-    source:      '/android-4.4/frameworks/base/core/res/res/values/custom_strings.xml'
+    source:      '/frameworks/base/core/res/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: &anchor
       android_code:
@@ -85,19 +86,19 @@ files:
 
  # DocumentsUI
   -
-    source:      '/android-4.4/frameworks/base/packages/DocumentsUI/res/values/custom_strings.xml'
+    source:      '/frameworks/base/packages/DocumentsUI/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # SystemUI
   -
-    source:      '/android-4.4/frameworks/base/packages/SystemUI/res/values/custom_strings.xml'
+    source:      '/frameworks/base/packages/SystemUI/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # WallpaperCropper
   -
-    source:      '/android-4.4/frameworks/base/packages/WallpaperCropper/res/values/custom_strings.xml'
+    source:      '/frameworks/base/packages/WallpaperCropper/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
@@ -106,85 +107,85 @@ files:
 
  # Apollo
   -
-    source:      '/android-4.4/packages/apps/Apollo/res/values/plurals.xml'
+    source:      '/packages/apps/Apollo/res/values/plurals.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/packages/apps/Apollo/res/values/strings.xml'
+    source:      '/packages/apps/Apollo/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # Camera2
   -
-    source:      '/android-4.4/packages/apps/Camera2/res/values/custom_strings.xml'
+    source:      '/packages/apps/Camera2/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # DeskClock
   -
-    source:      '/android-4.4/packages/apps/DeskClock/res/values/custom_strings.xml'
+    source:      '/packages/apps/DeskClock/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # Dialer
   -
-    source:      '/android-4.4/packages/apps/Dialer/res/values/custom_strings.xml'
+    source:      '/packages/apps/Dialer/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # DSPManager
   -
-    source:      '/android-4.4/packages/apps/DSPManager/res/values/arrays.xml'
+    source:      '/packages/apps/DSPManager/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/packages/apps/DSPManager/res/values/strings.xml'
+    source:      '/packages/apps/DSPManager/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # Launcher3
   -
-    source:      '/android-4.4/packages/apps/Launcher3/res/values/custom_strings.xml'
+    source:      '/packages/apps/Launcher3/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # Mms
   -
-    source:      '/android-4.4/packages/apps/Mms/res/values/custom_strings.xml'
+    source:      '/packages/apps/Mms/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # OmniGears
   -
-    source:      '/android-4.4/packages/apps/OmniGears/res/values/custom_strings.xml'
+    source:      '/packages/apps/OmniGears/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # OmniTorch
   -
-    source:      '/android-4.4/packages/apps/OmniTorch/res/values/strings.xml'
+    source:      '/packages/apps/OmniTorch/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # OpenDelta
   -
-    source:      '/android-4.4/packages/apps/OpenDelta/res/values/strings.xml'
+    source:      '/packages/apps/OpenDelta/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # SamsungServiceMode
   -
-    source:      '/android-4.4/packages/apps/SamsungServiceMode/res/values/strings.xml'
+    source:      '/packages/apps/SamsungServiceMode/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # Settings
   -
-    source:      '/android-4.4/packages/apps/Settings/res/values/custom_arrays.xml'
+    source:      '/packages/apps/Settings/res/values/custom_arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/packages/apps/Settings/res/values/custom_strings.xml'
+    source:      '/packages/apps/Settings/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
@@ -192,11 +193,11 @@ files:
 
  # DownloadProvider
   -
-    source:      '/android-4.4/packages/providers/DownloadProvider/res/values/custom_strings.xml'
+    source:      '/packages/providers/DownloadProvider/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/packages/providers/DownloadProvider/ui/res/values/custom_strings.xml'
+    source:      '/packages/providers/DownloadProvider/ui/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
@@ -204,7 +205,7 @@ files:
 
  # Telephony
   -
-    source:      '/android-4.4/packages/services/Telephony/res/values/custom_strings.xml'
+    source:      '/packages/services/Telephony/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
@@ -212,118 +213,118 @@ files:
 
  # asus
   -
-    source:      '/android-4.4/device/asus/me301t/AutoParts/res/values/strings.xml'
+    source:      '/device/asus/me301t/AutoParts/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/asus/tf101/AutoParts/res/values/strings.xml'
+    source:      '/device/asus/tf101/AutoParts/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/asus/tf300t/AutoParts/res/values/strings.xml'
+    source:      '/device/asus/tf300t/AutoParts/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/asus/tf700t/AutoParts/res/values/strings.xml'
+    source:      '/device/asus/tf700t/AutoParts/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # htc
   -
-    source:      '/android-4.4/device/htc/m7-common/DeviceSettings/res/values/arrays.xml'
+    source:      '/device/htc/m7-common/DeviceSettings/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/htc/m7-common/DeviceSettings/res/values/strings.xml'
+    source:      '/device/htc/m7-common/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # oppo
   -
-    source:      '/android-4.4/device/oppo/find5/Find5Parts/res/values/strings.xml'
+    source:      '/device/oppo/find5/Find5Parts/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/oppo/msm8974-common/Find7Parts/res/values/strings.xml'
+    source:      '/device/oppo/msm8974-common/Find7Parts/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/oppo/n1/N1Parts/res/values/strings.xml'
+    source:      '/device/oppo/n1/N1Parts/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/oppo/n1/OmniClick/res/values/strings.xml'
+    source:      '/device/oppo/n1/OmniClick/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # samsung
   -
-    source:      '/android-4.4/device/samsung/aries-common/DeviceSettings/res/values/arrays.xml'
+    source:      '/device/samsung/aries-common/DeviceSettings/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/aries-common/DeviceSettings/res/values/strings.xml'
+    source:      '/device/samsung/aries-common/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/i9100g/DeviceSettings/res/values/arrays.xml'
+    source:      '/device/samsung/i9100g/DeviceSettings/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/i9100g/DeviceSettings/res/values/strings.xml'
+    source:      '/device/samsung/i9100g/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/i9103/DeviceSettings/res/values/arrays.xml'
+    source:      '/device/samsung/i9103/DeviceSettings/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/i9103/DeviceSettings/res/values/strings.xml'
+    source:      '/device/samsung/i9103/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/n80xx-common/DeviceSettings/res/values/arrays.xml'
+    source:      '/device/samsung/n80xx-common/DeviceSettings/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/n80xx-common/DeviceSettings/res/values/strings.xml'
+    source:      '/device/samsung/n80xx-common/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/p1-common/DeviceSettings/res/values/arrays.xml'
+    source:      '/device/samsung/p1-common/DeviceSettings/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/p1-common/DeviceSettings/res/values/strings.xml'
+    source:      '/device/samsung/p1-common/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/p3100/DeviceSettings/res/values/strings.xml'
+    source:      '/device/samsung/p3100/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/p5100/DeviceSettings/res/values/strings.xml'
+    source:      '/device/samsung/p5100/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/smdk4412-common/DeviceSettings/res/values/arrays.xml'
+    source:      '/device/samsung/smdk4412-common/DeviceSettings/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/samsung/smdk4412-common/DeviceSettings/res/values/strings.xml'
+    source:      '/device/samsung/smdk4412-common/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
  # semc
   -
-    source:      '/android-4.4/device/semc/mogami-common/MogamiKeypad/res/values/strings.xml'
+    source:      '/device/semc/mogami-common/MogamiKeypad/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/semc/msm7x30-common/DeviceSettings/res/values/arrays.xml'
+    source:      '/device/semc/msm7x30-common/DeviceSettings/res/values/arrays.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
   -
-    source:      '/android-4.4/device/semc/msm7x30-common/DeviceSettings/res/values/strings.xml'
+    source:      '/device/semc/msm7x30-common/DeviceSettings/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
