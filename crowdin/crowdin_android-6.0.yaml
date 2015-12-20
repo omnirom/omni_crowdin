@@ -1,0 +1,157 @@
+# crowdin_android-5.0.yaml
+#
+# Crowdin configuration file for OmniROM
+#
+# Copyright (C) 2015 OmniROM
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+project_identifier: OmniROM
+preserve_hierarchy: true
+
+files:
+# Frameworks
+
+ # framework-res
+  -
+    source:      '/android-6.0/frameworks/base/core/res/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: &anchor
+      android_code:
+        af: af
+        am: am
+        ar: ar
+        az: az
+        be: be
+        bg: bg
+        ca: ca
+        cs: cs
+        da: da
+        de: de
+        el: el
+        es-ES: es
+        et: et
+        fa: fa
+        fi: fi
+        fr: fr
+        he: iw
+        hi: hi
+        hr: hr
+        hu: hu
+        hy-AM: hy
+        id: in
+        it: it
+        ja: ja
+        ka: ka
+        km: km
+        ko: ko
+        lo: lo
+        lt: lt
+        lv: lv
+        mn: mn
+        ms: ms
+        nb: nb
+        ne-NP: ne
+        nl: nl
+        pl: pl
+        rm-CH: rm
+        ro: ro
+        ru: ru
+        si-LK: si
+        sk: sk
+        sl: sl
+        sr: sr
+        sv-SE: sv
+        sw: sw
+        th: th
+        tl: tl
+        tr: tr
+        uk: uk
+        vi: vi
+        zu: zu
+
+ # DocumentsUI
+  -
+    source:      '/android-6.0/frameworks/base/packages/DocumentsUI/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # SystemUI
+  -
+    source:      '/android-6.0/frameworks/base/packages/SystemUI/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+
+# Packages
+
+ # Apollo
+  -
+    source:      '/android-6.0/packages/apps/Apollo/res/values/plurals.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/android-6.0/packages/apps/Apollo/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # Camera2
+  -
+    source:      '/android-6.0/packages/apps/Camera2/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # DeskClock
+  -
+    source:      '/android-6.0/packages/apps/DeskClock/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # DSPManager
+  -
+    source:      '/android-6.0/packages/apps/DSPManager/res/values/arrays.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/android-6.0/packages/apps/DSPManager/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # Launcher3
+  -
+    source:      '/android-6.0/packages/apps/Launcher3/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # OmniGears
+  -
+    source:      '/android-6.0/packages/apps/OmniGears/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # OpenDelta
+  -
+    source:      '/android-6.0/packages/apps/OpenDelta/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # Settings
+  -
+    source:      '/android-6.0/packages/apps/Settings/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+
+# DeviceSettings
+
+ # TO DO
