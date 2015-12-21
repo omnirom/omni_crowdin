@@ -154,4 +154,8 @@ files:
 
 # DeviceSettings
 
- # TO DO
+ # fusion3-common
+  -
+    source:      '/android-6.0/device/moto/shamu/Nexus6Parts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor

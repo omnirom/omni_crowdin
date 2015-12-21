@@ -4,5 +4,6 @@
   <!-- TO DO -->
 
   <!-- Device repositories that can be translated -->
-  <!-- TO DO -->
+  <project name="android_device_moto_shamu" path="android/device/moto/shamu" remote="omnirom" revision="android-6.0" />
+
 </manifest>
