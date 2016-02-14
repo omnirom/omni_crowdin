@@ -139,6 +139,12 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
+ # OmniSwitch
+  -
+    source:      '/android-6.0/packages/apps/OmniSwitch/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
  # OpenDelta
   -
     source:      '/android-6.0/packages/apps/OpenDelta/res/values/strings.xml'
