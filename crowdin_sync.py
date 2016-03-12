@@ -156,19 +156,19 @@ def upload_sources_crowdin(branch, config):
     if config:
         print('\nUploading sources to Crowdin (custom config)')
         check_run(['crowdin-cli',
-                   '--config=%s/crowdin/%s' % (_DIR, config),
+                   '--config=%s/config/%s' % (_DIR, config),
                    'upload', 'sources', '--branch=%s' % branch])
     else:
         print('\nUploading sources to Crowdin (AOSP supported languages)')
         check_run(['crowdin-cli',
-                   '--config=%s/crowdin/crowdin_%s.yaml' % (_DIR, branch),
+                   '--config=%s/config/%s.yaml' % (_DIR, branch),
                    'upload', 'sources', '--branch=%s' % branch])
 
 def upload_translations_crowdin(branch, config):
     if config:
         print('\nUploading translations to Crowdin (custom config)')
         check_run(['crowdin-cli',
-                   '--config=%s/crowdin/%s' % (_DIR, config),
+                   '--config=%s/config/%s' % (_DIR, config),
                    'upload', 'translations', '--branch=%s' % branch,
                    '--no-import-duplicates', '--import-eq-suggestions',
                    '--auto-approve-imported'])
@@ -176,7 +176,7 @@ def upload_translations_crowdin(branch, config):
         print('\nUploading translations to Crowdin '
               '(AOSP supported languages)')
         check_run(['crowdin-cli',
-                   '--config=%s/crowdin/crowdin_%s.yaml' % (_DIR, branch),
+                   '--config=%s/config/%s.yaml' % (_DIR, branch),
                    'upload', 'translations', '--branch=%s' % branch,
                    '--no-import-duplicates', '--import-eq-suggestions',
                    '--auto-approve-imported'])
@@ -186,13 +186,13 @@ def download_crowdin(base_path, branch, xml, username, config):
     if config:
         print('\nDownloading translations from Crowdin (custom config)')
         check_run(['crowdin-cli',
-                   '--config=%s/crowdin/%s' % (_DIR, config),
+                   '--config=%s/config/%s' % (_DIR, config),
                    'download', '--branch=%s' % branch])
     else:
         print('\nDownloading translations from Crowdin '
               '(AOSP supported languages)')
         check_run(['crowdin-cli',
-                   '--config=%s/crowdin/crowdin_%s.yaml' % (_DIR, branch),
+                   '--config=%s/config/%s.yaml' % (_DIR, branch),
                    'download', '--branch=%s' % branch])
 
 
@@ -221,10 +221,9 @@ def download_crowdin(base_path, branch, xml, username, config):
     # Get all files that Crowdin pushed
     paths = []
     if config:
-        files = ['%s/crowdin/%s' % (_DIR, config)]
+        files = ['%s/config/%s' % (_DIR, config)]
     else:
-        files = ['%s/crowdin/crowdin_%s.yaml' % (_DIR, branch)
-                ]
+        files = ['%s/config/%s.yaml' % (_DIR, branch)]
     for c in files:
         cmd = ['crowdin-cli', '--config=%s' % c, 'list', 'project',
                '--branch=%s' % branch]
@@ -262,7 +261,7 @@ def download_crowdin(base_path, branch, xml, username, config):
         # project in all_projects and check if it's already in there.
         all_projects.append(result)
 
-        # Search android/default.xml or crowdin/extra_packages_%(branch).xml
+        # Search android/default.xml or config/%(branch)_extra_packages.xml
         # for the project's name
         for project in items:
             path = project.attributes['path'].value
@@ -304,16 +303,15 @@ def main():
     if xml_android is None:
         sys.exit(1)
 
-    xml_extra = load_xml(x='%s/crowdin/extra_packages_%s.xml'
+    xml_extra = load_xml(x='%s/config/%s_extra_packages.xml'
                            % (_DIR, default_branch))
     if xml_extra is None:
         sys.exit(1)
 
     if args.config:
-        files = ['%s/crowdin/%s' % (_DIR, args.config)]
+        files = ['%s/config/%s' % (_DIR, args.config)]
     else:
-        files = ['%s/crowdin/crowdin_%s.yaml' % (_DIR, default_branch)
-                 ]
+        files = ['%s/config/%s.yaml' % (_DIR, default_branch)]
     if not check_files(files):
         sys.exit(1)
 
