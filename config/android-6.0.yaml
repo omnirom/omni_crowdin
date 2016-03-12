@@ -1,4 +1,4 @@
-# crowdin_android-5.0.yaml
+# android-6.0.yaml
 #
 # Crowdin configuration file for OmniROM
 #
@@ -130,9 +130,27 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
+ # Launcher3
+  -
+    source:      '/packages/apps/Launcher3/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
  # OmniGears
   -
     source:      '/packages/apps/OmniGears/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # OmniJaws
+  -
+    source:      '/packages/services/OmniJaws/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # OmniSwitch
+  -
+    source:      '/packages/apps/OmniSwitch/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
@@ -142,14 +160,22 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
- # SamsungServiceMode
-  -
-    source:      '/packages/apps/SamsungServiceMode/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
  # Settings
   -
     source:      '/packages/apps/Settings/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
+
+ # SnapdragonCamera
+  -
+    source:      '/packages/apps/SnapdragonCamera/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/packages/apps/SnapdragonCamera/res/values/qcomstrings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+# DeviceSettings
+
+ # TO DO

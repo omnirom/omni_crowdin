@@ -1,4 +1,4 @@
-# crowdin_android-6.0.yaml
+# android-5.1.yaml
 #
 # Crowdin configuration file for OmniROM
 #
@@ -142,21 +142,15 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
- # OmniJaws
-  -
-    source:      '/packages/services/OmniJaws/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
- # OmniSwitch
-  -
-    source:      '/packages/apps/OmniSwitch/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
  # OpenDelta
   -
     source:      '/packages/apps/OpenDelta/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # SamsungServiceMode
+  -
+    source:      '/packages/apps/SamsungServiceMode/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
@@ -166,16 +160,17 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
- # SnapdragonCamera
-  -
-    source:      '/packages/apps/SnapdragonCamera/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/packages/apps/SnapdragonCamera/res/values/qcomstrings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
 
 # DeviceSettings
 
- # TO DO
+ # Samsung Galaxy Tab 2
+  -
+    source:      '/device/samsung/espresso-common/DeviceSettings/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # smdk4412-common
+  -
+    source:      '/device/samsung/smdk4412-common/DeviceSettings/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
