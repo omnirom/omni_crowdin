@@ -139,6 +139,12 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
+ # OmniJaws
+  -
+    source:      '/android-6.0/packages/services/OmniJaws/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
  # OmniSwitch
   -
     source:      '/android-6.0/packages/apps/OmniSwitch/res/values/strings.xml'
@@ -157,9 +163,9 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
- # OmniJaws
+ # SnapdragonCamera
   -
-    source:      '/android-6.0/packages/services/OmniJaws/res/values/strings.xml'
+    source:      '/android-6.0/packages/apps/SnapdragonCamera/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
