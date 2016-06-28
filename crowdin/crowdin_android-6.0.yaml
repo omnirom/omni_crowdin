@@ -168,6 +168,10 @@ files:
     source:      '/android-6.0/packages/apps/SnapdragonCamera/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
+  -
+    source:      '/android-6.0/packages/apps/SnapdragonCamera/res/values/qcomstrings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
 
 # DeviceSettings
 
