@@ -35,6 +35,7 @@ from xml.dom import minidom
 # ################################# GLOBALS ################################## #
 
 _DIR = os.path.dirname(os.path.realpath(__file__))
+_COMMITS_CREATED = False
 
 # ################################ FUNCTIONS ################################# #
 
@@ -86,6 +87,8 @@ def push_as_commit(base_path, path, name, branch, username):
         print('Successfully pushed commit for %s' % name)
     except:
         print('Failed to push commit for %s' % name, file=sys.stderr)
+
+    _COMMITS_CREATED = True
 
 def check_run(cmd):
     p = subprocess.Popen(cmd, stdout=sys.stdout, stderr=sys.stderr)
@@ -287,7 +290,13 @@ def main():
     upload_crowdin(default_branch, args.no_upload)
     download_crowdin(base_path, default_branch, (xml_android, xml_extra),
                      args.username, args.no_download)
-    print('\nDone!')
+
+    if _COMMITS_CREATED:
+        print('\nDone!')
+        sys.exit(0)
+    else:
+        print('\nNothing to commit')
+        sys.exit(-1)
 
 if __name__ == '__main__':
     main()
