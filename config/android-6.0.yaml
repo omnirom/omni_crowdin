@@ -34,7 +34,7 @@ files:
         af: af
         am: am
         ar: ar
-        az: az
+        az: az-rAZ
         be: be
         bg: bg
         ca: ca
@@ -58,7 +58,7 @@ files:
         ka: ka
         km: km
         ko: ko
-        lo: lo
+        lo: lo-rLA
         lt: lt
         lv: lv
         mn: mn
@@ -67,6 +67,8 @@ files:
         ne-NP: ne
         nl: nl
         pl: pl
+        pt-PT: pt-rPT
+        pt-BR: pt-rBR
         rm-CH: rm
         ro: ro
         ru: ru
@@ -81,6 +83,9 @@ files:
         tr: tr
         uk: uk
         vi: vi
+        zh-CN: zh-rCN
+        zh-HK: zh-rHK
+        zh-TW: zh-rTW
         zu: zu
 
  # DocumentsUI
