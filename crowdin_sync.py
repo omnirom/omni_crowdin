@@ -300,13 +300,17 @@ def main():
     if not check_dependencies():
         sys.exit(1)
 
-    xml_android = load_xml(x='%s/android/default.xml' % base_path)
+    xml_android = load_xml(x='%s/android/omni-default.xml' % base_path)
     if xml_android is None:
         sys.exit(1)
 
-    xml_extra = load_xml(x='%s/config/%s_extra_packages.xml'
+    xml_extra1 = load_xml(x='%s/android/omni-aosp.xml' % base_path)
+    if xml_extra1 is None:
+        sys.exit(1)
+
+    xml_extra2 = load_xml(x='%s/config/%s_extra_packages.xml'
                            % (_DIR, default_branch))
-    if xml_extra is None:
+    if xml_extra2 is None:
         sys.exit(1)
 
     if args.config:
@@ -325,7 +329,7 @@ def main():
     if args.upload_translations:
         upload_translations_crowdin(default_branch, args.config)
     if args.download:
-        download_crowdin(base_path, default_branch, (xml_android, xml_extra),
+        download_crowdin(base_path, default_branch, (xml_android, xml_extra1, xml_extra2),
                          args.username, args.config)
 
     if _COMMITS_CREATED:
