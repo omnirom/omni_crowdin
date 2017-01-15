@@ -1,0 +1,170 @@
+# android-7.1.yaml
+#
+# Crowdin configuration file for OmniROM
+#
+# Copyright (C) 2017 OmniROM
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+api_key_env: OMNI_CROWDIN_API_KEY
+base_path_env: OMNI_CROWDIN_BASE_PATH
+base_path_contains_branch_subfolders: true
+project_identifier: OmniROM
+preserve_hierarchy: true
+
+files:
+# Frameworks
+
+ # framework-res
+  -
+    source:      '/frameworks/base/core/res/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: &anchor
+      android_code:
+        af: af
+        am: am
+        ar: ar
+        az: az-rAZ
+        be: be
+        bg: bg
+        ca: ca
+        cs: cs
+        da: da
+        de: de
+        el: el
+        es-ES: es
+        et: et
+        fa: fa
+        fi: fi
+        fr: fr
+        he: iw
+        hi: hi
+        hr: hr
+        hu: hu
+        hy-AM: hy
+        id: in
+        it: it
+        ja: ja
+        ka: ka
+        km: km
+        ko: ko
+        lo: lo-rLA
+        lt: lt
+        lv: lv
+        mn: mn
+        ms: ms
+        nb: nb
+        ne-NP: ne
+        nl: nl
+        pl: pl
+        pt-PT: pt-rPT
+        pt-BR: pt-rBR
+        rm-CH: rm
+        ro: ro
+        ru: ru
+        si-LK: si
+        sk: sk
+        sl: sl
+        sr: sr
+        sv-SE: sv
+        sw: sw
+        th: th
+        tl: tl
+        tr: tr
+        uk: uk
+        vi: vi
+        zh-CN: zh-rCN
+        zh-HK: zh-rHK
+        zh-TW: zh-rTW
+        zu: zu
+
+ # SystemUI
+  -
+    source:      '/frameworks/base/packages/SystemUI/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+
+# Packages
+
+ # Apollo
+  -
+    source:      '/packages/apps/Apollo/res/values/plurals.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/packages/apps/Apollo/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # Camera2
+  -
+    source:      '/packages/apps/Camera2/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # DeskClock
+  -
+    source:      '/packages/apps/DeskClock/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # DSPManager
+  -
+    source:      '/packages/apps/DSPManager/res/values/arrays.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/packages/apps/DSPManager/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # OmniGears
+  -
+    source:      '/packages/apps/OmniGears/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # OmniJaws
+  -
+    source:      '/packages/services/OmniJaws/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # OmniSwitch
+  -
+    source:      '/packages/apps/OmniSwitch/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # OpenDelta
+  -
+    source:      '/packages/apps/OpenDelta/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # Settings
+  -
+    source:      '/packages/apps/Settings/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+ # SnapdragonCamera
+  -
+    source:      '/packages/apps/SnapdragonCamera/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/packages/apps/SnapdragonCamera/res/values/qcomstrings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
