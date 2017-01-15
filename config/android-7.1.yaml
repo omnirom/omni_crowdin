@@ -129,6 +129,12 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
+ # OmniClock
+  -
+    source:      '/packages/apps/OmniClock/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
  # OmniGears
   -
     source:      '/packages/apps/OmniGears/res/values/custom_strings.xml'
