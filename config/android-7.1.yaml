@@ -119,16 +119,6 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
- # DSPManager
-  -
-    source:      '/packages/apps/DSPManager/res/values/arrays.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/packages/apps/DSPManager/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
  # OmniClock
   -
     source:      '/packages/apps/OmniClock/res/values/custom_strings.xml'
