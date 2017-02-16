@@ -164,3 +164,9 @@ files:
     source:      '/packages/apps/SnapdragonCamera/res/values/qcomstrings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
+
+# Calendar
+  -
+    source:      '/packages/apps/Calendar/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
