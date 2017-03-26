@@ -113,12 +113,17 @@ def parse_args():
     parser.add_argument('-b', '--branch', help='OmniROM branch',
                         required=True)
     parser.add_argument('-c', '--config', help='Custom yaml config')
+    parser.add_argument('-d', '--device', help='target device for test build')
     parser.add_argument('--upload-sources', action='store_true',
                         help='Upload sources to Crowdin')
     parser.add_argument('--upload-translations', action='store_true',
                         help='Upload translations to Crowdin')
     parser.add_argument('--download', action='store_true',
                         help='Download translations from Crowdin')
+    parser.add_argument('--local-download', action='store_true',
+                        help='local Download translations from Crowdin')
+    parser.add_argument('--safe-download', action='store_true',
+                        help='Download translations from Crowdin and upload to gerrit after test build')
     return parser.parse_args()
 
 # ################################# PREPARE ################################## #
@@ -280,6 +285,91 @@ def download_crowdin(base_path, branch, xml, username, config):
                            project.getAttribute('name'), br, username)
             break
 
+def local_download(base_path, branch, xml, config):
+    if config:
+        print('\nDownloading translations from Crowdin (custom config)')
+        check_run(['crowdin-cli',
+                   '--config=%s/config/%s' % (_DIR, config),
+                   'download', '--branch=%s' % branch])
+    else:
+        print('\nDownloading translations from Crowdin '
+              '(AOSP supported languages)')
+        check_run(['crowdin-cli',
+                   '--config=%s/config/%s.yaml' % (_DIR, branch),
+                   'download', '--branch=%s' % branch])
+
+
+    print('\nRemoving useless empty translation files')
+    empty_contents = {
+        '<resources/>',
+        '<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>',
+        ('<resources xmlns:android='
+         '"http://schemas.android.com/apk/res/android"/>'),
+        ('<resources xmlns:android="http://schemas.android.com/apk/res/android"'
+         ' xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>'),
+        ('<resources xmlns:tools="http://schemas.android.com/tools"'
+         ' xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>')
+    }
+    xf = None
+    for xml_file in find_xml(base_path):
+        xf = open(xml_file).read()
+        for line in empty_contents:
+            if line in xf:
+                print('Removing ' + xml_file)
+                os.remove(xml_file)
+                break
+    del xf
+    
+def safe_download(base_path, branch, xml, username, config, device):
+    if config:
+        print('\nDownloading translations from Crowdin (custom config)')
+        check_run(['crowdin-cli',
+                   '--config=%s/config/%s' % (_DIR, config),
+                   'download', '--branch=%s' % branch])
+    else:
+        print('\nDownloading translations from Crowdin '
+              '(AOSP supported languages)')
+        check_run(['crowdin-cli',
+                   '--config=%s/config/%s.yaml' % (_DIR, branch),
+                   'download', '--branch=%s' % branch])
+
+
+    print('\nRemoving useless empty translation files')
+    empty_contents = {
+        '<resources/>',
+        '<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>',
+        ('<resources xmlns:android='
+         '"http://schemas.android.com/apk/res/android"/>'),
+        ('<resources xmlns:android="http://schemas.android.com/apk/res/android"'
+         ' xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>'),
+        ('<resources xmlns:tools="http://schemas.android.com/tools"'
+         ' xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>')
+    }
+    xf = None
+    for xml_file in find_xml(base_path):
+        xf = open(xml_file).read()
+        for line in empty_contents:
+            if line in xf:
+                print('Removing ' + xml_file)
+                os.remove(xml_file)
+                break
+    del xf
+    
+    print('\nDoing a test-build')
+    #cmd = [base_path,branch'/. build/envsetup.sh & brunch %s' % device]
+    cmd = "%s%s" % ('. build/envsetup.sh & brunch ',device)
+    print(cmd)
+    comm, ret = run_subprocess(cmd)
+    if ret != 0:
+        sys.exit(ret)
+    #if files = [% base_path '/out/target/product/%s' % device '/*.zip']
+    cmd = "ls %s%s%s/*.zip" % (base_path,'/out/target/product/',device)
+    comm, ret = run_subprocess(cmd)
+    if ret == 0:
+		sys.exit(ret)
+    else:
+        print('\ntest-build successful, Creating a list of pushable translations')
+
 
 def main():
     args = parse_args()
@@ -331,6 +421,13 @@ def main():
     if args.download:
         download_crowdin(base_path, default_branch, (xml_android, xml_extra1, xml_extra2),
                          args.username, args.config)
+    if args.local_download:
+        local_download(base_path, default_branch, (xml_android, xml_extra1, xml_extra2),
+                         args.config)
+                         
+    if args.safe_download:
+        safe_download(base_path, default_branch, (xml_android, xml_extra1, xml_extra2),
+                         args.username, args.config, args.device)
 
     if _COMMITS_CREATED:
         print('\nDone!')
