@@ -18,7 +18,7 @@
 
 api_key_env: OMNI_CROWDIN_API_KEY
 base_path_env: OMNI_CROWDIN_BASE_PATH
-base_path_contains_branch_subfolders: true
+base_path_contains_branch_subfolders: false
 project_identifier: OmniROM
 preserve_hierarchy: true
 
