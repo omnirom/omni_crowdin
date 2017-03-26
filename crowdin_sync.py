@@ -110,8 +110,7 @@ def parse_args():
         description="Synchronising OmniROM's translations with Crowdin")
     sync = parser.add_mutually_exclusive_group()
     parser.add_argument('-u', '--username', help='Gerrit username')
-    parser.add_argument('-b', '--branch', help='OmniROM branch',
-                        required=True)
+    parser.add_argument('-b', '--branch', help='OmniROM branch')
     parser.add_argument('-c', '--config', help='Custom yaml config')
     parser.add_argument('--upload-sources', action='store_true',
                         help='Upload sources to Crowdin')
@@ -119,6 +118,8 @@ def parse_args():
                         help='Upload translations to Crowdin')
     parser.add_argument('--download', action='store_true',
                         help='Download translations from Crowdin')
+    parser.add_argument('--local-download', action='store_true',
+                        help='local Download translations from Crowdin')
     return parser.parse_args()
 
 # ################################# PREPARE ################################## #
@@ -280,6 +281,40 @@ def download_crowdin(base_path, branch, xml, username, config):
                            project.getAttribute('name'), br, username)
             break
 
+def local_download(base_path, branch, xml, config):
+    if config:
+        print('\nDownloading translations from Crowdin (custom config)')
+        check_run(['crowdin-cli',
+                   '--config=%s/config/%s' % (_DIR, config),
+                   'download', '--branch=%s' % branch])
+    else:
+        print('\nDownloading translations from Crowdin '
+              '(AOSP supported languages)')
+        check_run(['crowdin-cli',
+                   '--config=%s/config/%s.yaml' % (_DIR, branch),
+                   'download', '--branch=%s' % branch])
+
+
+    print('\nRemoving useless empty translation files')
+    empty_contents = {
+        '<resources/>',
+        '<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>',
+        ('<resources xmlns:android='
+         '"http://schemas.android.com/apk/res/android"/>'),
+        ('<resources xmlns:android="http://schemas.android.com/apk/res/android"'
+         ' xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>'),
+        ('<resources xmlns:tools="http://schemas.android.com/tools"'
+         ' xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>')
+    }
+    xf = None
+    for xml_file in find_xml(base_path):
+        xf = open(xml_file).read()
+        for line in empty_contents:
+            if line in xf:
+                print('Removing ' + xml_file)
+                os.remove(xml_file)
+                break
+    del xf
 
 def main():
     args = parse_args()
@@ -287,15 +322,13 @@ def main():
 
     base_path = os.getenv('OMNI_CROWDIN_BASE_PATH')
     if base_path is None:
-        cwd = os.getcwd()
-        print('You have not set OMNI_CROWDIN_BASE_PATH. Defaulting to %s' % cwd)
-        base_path = cwd
-    else:
-        base_path = os.path.join(os.path.realpath(base_path), default_branch)
-    if not os.path.isdir(base_path):
-        print('OMNI_CROWDIN_BASE_PATH + branch is not a real directory: %s'
-              % base_path)
+        print('You have not set OMNI_CROWDIN_BASE_PATH')
         sys.exit(1)
+    if default_branch is None:
+        default_branch = os.getenv('OMNI_CROWDIN_BRANCH')
+        if default_branch is None:
+            print('You have not set OMNI_CROWDIN_BRANCH')
+            sys.exit(1)
 
     if not check_dependencies():
         sys.exit(1)
@@ -331,6 +364,9 @@ def main():
     if args.download:
         download_crowdin(base_path, default_branch, (xml_android, xml_extra1, xml_extra2),
                          args.username, args.config)
+    if args.local_download:
+        local_download(base_path, default_branch, (xml_android, xml_extra1, xml_extra2),
+                         args.config)
 
     if _COMMITS_CREATED:
         print('\nDone!')
