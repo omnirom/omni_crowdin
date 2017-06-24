@@ -1,0 +1,109 @@
+# android-7.1.yaml
+#
+# Crowdin configuration file for OmniROM
+#
+# Copyright (C) 2017 OmniROM
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+api_key_env: OMNI_CROWDIN_API_KEY
+base_path_env: OMNI_CROWDIN_BASE_PATH
+base_path_contains_branch_subfolders: false
+project_identifier: OmniROM
+preserve_hierarchy: true
+
+files:
+
+# devices
+  -
+    source:      '/device/oneplus/oneplus3/Oneplus3Parts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: &anchor
+      android_code:
+        af: af
+        am: am
+        ar: ar
+        az: az-rAZ
+        be: be
+        bg: bg
+        ca: ca
+        cs: cs
+        da: da
+        de: de
+        el: el
+        es-ES: es
+        et: et
+        fa: fa
+        fi: fi
+        fr: fr
+        he: iw
+        hi: hi
+        hr: hr
+        hu: hu
+        hy-AM: hy
+        id: in
+        it: it
+        ja: ja
+        ka: ka
+        km: km
+        ko: ko
+        lo: lo-rLA
+        lt: lt
+        lv: lv
+        mn: mn
+        ms: ms
+        nb: nb
+        ne-NP: ne
+        nl: nl
+        pl: pl
+        pt-PT: pt-rPT
+        pt-BR: pt-rBR
+        rm-CH: rm
+        ro: ro
+        ru: ru
+        si-LK: si
+        sk: sk
+        sl: sl
+        sr: sr
+        sv-SE: sv
+        sw: sw
+        th: th
+        tl: tl
+        tr: tr
+        uk: uk
+        vi: vi
+        zh-CN: zh-rCN
+        zh-HK: zh-rHK
+        zh-TW: zh-rTW
+        zu: zu
+
+  -
+    source:      '/device/oppo/msm8974-common/Find7Parts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/device/samsung/msm8976-common/GTS2Parts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/device/leeco/zl1/DeviceParts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/device/oneplus/oneplus2/Oneplus2Parts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/device/huawei/angler/NexusParts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
