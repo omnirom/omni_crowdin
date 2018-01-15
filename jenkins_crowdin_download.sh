@@ -4,7 +4,7 @@ source ~/crowdin_key.sh
 
 export OMNI_CROWDIN_BASE_PATH=/data2/android/omni-80-oneplus3/source
 export OMNI_CROWDIN_BRANCH=android-8.1
-export OMNI_CROWDIN_DEVICE=oneplus3
+export OMNI_CROWDIN_DEVICE=oneplus5
 
 cd $OMNI_CROWDIN_BASE_PATH
 
