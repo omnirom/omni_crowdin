@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-  <!-- Extra packages not included in the main manifest -->
-  <project name="android_packages_apps_SnapdragonCamera" path="packages/apps/SnapdragonCamera" remote="omnirom" revision="android-6.0" />
-
-  <!-- Device repositories that can be translated -->
-  <!-- TO DO -->
-</manifest>
