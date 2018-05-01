@@ -169,7 +169,7 @@ files:
 
 # Phonograph
   -
-    source:      'packages/apps/Phonograph/app/src/main/res/values/strings.xml'
+    source:      '/packages/apps/Phonograph/app/src/main/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
@@ -214,5 +214,17 @@ files:
     languages_mapping: *anchor
   -
     source:      '/device/oneplus/oneplus5/DeviceParts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/device/xiaomi/msm8998-common/XiaomiDoze/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/device/xiaomi/msm8998-common/XiaomiParts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/device/xiaomi/msm8996-common/XiaomiParts/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
