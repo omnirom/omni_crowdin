@@ -26,7 +26,7 @@ files:
 
 # devices
   -
-    source:      '/packages/apps/OmniChange/app/src/main/res/values/strings.xml'
+    source:      '/packages/apps/OmniBrain/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: &anchor
       android_code:
@@ -87,3 +87,7 @@ files:
         zh-TW: zh-rTW
         zu: zu
 
+#  -
+#    source:      '/packages/apps/OmniLib/res/values/strings.xml'
+#    translation: '/%original_path%-%android_code%/%original_file_name%'
+#    languages_mapping: *anchor
