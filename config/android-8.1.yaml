@@ -203,6 +203,16 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
+  -
+    source:      '/packages/apps/OmniLib/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/packages/apps/OmniBrain/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
 # devices
   -
     source:      '/device/oneplus/oneplus3/Oneplus3Parts/res/values/strings.xml'
@@ -226,5 +236,13 @@ files:
     languages_mapping: *anchor
   -
     source:      '/device/xiaomi/msm8996-common/XiaomiParts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/device/huawei/berkeley/HuaweiParts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+  -
+    source:      '/device/nubia/nx609j/DeviceParts/res/values/strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
