@@ -1,4 +1,4 @@
-# android-7.1.yaml
+# android-8.1.yaml
 #
 # Crowdin configuration file for OmniROM
 #
@@ -24,70 +24,3 @@ preserve_hierarchy: true
 
 files:
 
-# devices
-  -
-    source:      '/device/oneplus/oneplus6/DeviceParts/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: &anchor
-      android_code:
-        af: af
-        am: am
-        ar: ar
-        az: az-rAZ
-        be: be
-        bg: bg
-        ca: ca
-        cs: cs
-        da: da
-        de: de
-        el: el
-        es-ES: es
-        et: et
-        fa: fa
-        fi: fi
-        fr: fr
-        he: iw
-        hi: hi
-        hr: hr
-        hu: hu
-        hy-AM: hy
-        id: in
-        it: it
-        ja: ja
-        ka: ka
-        km: km
-        ko: ko
-        lo: lo-rLA
-        lt: lt
-        lv: lv
-        mn: mn
-        ms: ms
-        nb: nb
-        ne-NP: ne
-        nl: nl
-        pl: pl
-        pt-PT: pt-rPT
-        pt-BR: pt-rBR
-        rm-CH: rm
-        ro: ro
-        ru: ru
-        si-LK: si
-        sk: sk
-        sl: sl
-        sr: sr
-        sv-SE: sv
-        sw: sw
-        th: th
-        tl: tl
-        tr: tr
-        uk: uk
-        vi: vi
-        zh-CN: zh-rCN
-        zh-HK: zh-rHK
-        zh-TW: zh-rTW
-        zu: zu
-
-#  -
-#    source:      '/packages/apps/OmniLib/res/values/strings.xml'
-#    translation: '/%original_path%-%android_code%/%original_file_name%'
-#    languages_mapping: *anchor
