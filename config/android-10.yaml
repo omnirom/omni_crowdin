@@ -97,11 +97,6 @@ files:
 
 # Packages
 
-# Camera2
-  -
-    source:      '/packages/apps/Camera2/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
 
 # OmniClock
   -
@@ -144,16 +139,6 @@ files:
     source:      '/packages/apps/Settings/res/values/custom_strings.xml'
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
-
-# SnapdragonCamera
-#  -
-#    source:      '/packages/apps/SnapdragonCamera/res/values/strings.xml'
-#    translation: '/%original_path%-%android_code%/%original_file_name%'
-#    languages_mapping: *anchor
-#  -
-#    source:      '/packages/apps/SnapdragonCamera/res/values/qcomstrings.xml'
-#    translation: '/%original_path%-%android_code%/%original_file_name%'
-#    languages_mapping: *anchor
 
 # Calendar
   -
@@ -208,45 +193,3 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
-  -
-    source:      '/packages/apps/OmniBrain/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-
-# devices
-  -
-    source:      '/device/oneplus/oneplus3/Oneplus3Parts/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/device/samsung/msm8976-common/GTS2Parts/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/device/oneplus/oneplus5/DeviceParts/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/device/xiaomi/msm8998-common/XiaomiDoze/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/device/xiaomi/msm8998-common/XiaomiParts/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/device/xiaomi/msm8996-common/XiaomiParts/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/device/huawei/berkeley/HuaweiParts/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/device/nubia/nx609j/DeviceParts/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source:      '/device/oneplus/oneplus6/DeviceParts/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor

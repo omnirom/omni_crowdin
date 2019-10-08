@@ -335,15 +335,18 @@ def main():
 
     xml_android = load_xml(x='%s/android/omni-default.xml' % base_path)
     if xml_android is None:
+        print('no omni-default.xml')
         sys.exit(1)
 
     xml_extra1 = load_xml(x='%s/android/omni-aosp.xml' % base_path)
     if xml_extra1 is None:
+        print('no omni-aosp.xml')
         sys.exit(1)
 
     xml_extra2 = load_xml(x='%s/config/%s_extra_packages.xml'
                            % (_DIR, default_branch))
     if xml_extra2 is None:
+        print('no extra_packages.xml')
         sys.exit(1)
 
     if args.config:
