@@ -193,3 +193,34 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
+  -
+    source:      '/packages/providers/DownloadProvider/res/values/omni_*.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/packages/apps/Messaging/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/packages/apps/OmniRemote/app/src/main/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/packages/apps/ThemePicker/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+# devices
+
+  -
+    source:      'device/oneplus/oneplus6/DeviceParts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+    
+  -
+    source:      'device/oneplus/oneplus7pro/DeviceParts/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
