@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # crowdin_sync.py
 #
@@ -211,12 +211,15 @@ def download_crowdin(base_path, branch, xml, username, config):
     }
     xf = None
     for xml_file in find_xml(base_path):
-        xf = open(xml_file).read()
-        for line in empty_contents:
-            if line in xf:
-                print('Removing ' + xml_file)
-                os.remove(xml_file)
-                break
+        try:
+            xf = open(xml_file).read()
+            for line in empty_contents:
+                if line in xf:
+                    print('Removing ' + xml_file)
+                    os.remove(xml_file)
+                    break
+        except UnicodeDecodeError:
+            continue
     del xf
 
     print('\nCreating a list of pushable translations')
@@ -308,12 +311,15 @@ def local_download(base_path, branch, xml, config):
     }
     xf = None
     for xml_file in find_xml(base_path):
-        xf = open(xml_file).read()
-        for line in empty_contents:
-            if line in xf:
-                print('Removing ' + xml_file)
-                os.remove(xml_file)
-                break
+        try:
+            xf = open(xml_file).read()
+            for line in empty_contents:
+                if line in xf:
+                    print('Removing ' + xml_file)
+                    os.remove(xml_file)
+                    break
+        except UnicodeDecodeError:
+            continue
     del xf
 
 def main():
@@ -343,9 +349,14 @@ def main():
         print('no omni-aosp.xml')
         sys.exit(1)
 
-    xml_extra2 = load_xml(x='%s/config/%s_extra_packages.xml'
-                           % (_DIR, default_branch))
+    xml_extra2 = load_xml(x='%s/android/omni-private.xml' % base_path)
     if xml_extra2 is None:
+        print('no omni-private.xml')
+        sys.exit(1)
+
+    xml_extra3 = load_xml(x='%s/config/%s_extra_packages.xml'
+                           % (_DIR, default_branch))
+    if xml_extra3 is None:
         print('no extra_packages.xml')
         sys.exit(1)
 
@@ -365,10 +376,10 @@ def main():
     if args.upload_translations:
         upload_translations_crowdin(default_branch, args.config)
     if args.download:
-        download_crowdin(base_path, default_branch, (xml_android, xml_extra1, xml_extra2),
+        download_crowdin(base_path, default_branch, (xml_android, xml_extra1, xml_extra2, xml_extra3),
                          args.username, args.config)
     if args.local_download:
-        local_download(base_path, default_branch, (xml_android, xml_extra1, xml_extra2),
+        local_download(base_path, default_branch, (xml_android, xml_extra1, xml_extra2, xml_extra3),
                          args.config)
 
     if _COMMITS_CREATED:
