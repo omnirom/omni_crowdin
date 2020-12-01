@@ -218,8 +218,13 @@ def download_crowdin(base_path, branch, xml, username, config):
                     print('Removing ' + xml_file)
                     os.remove(xml_file)
                     break
+<<<<<<< HEAD   (d59f1e crowdin: add private repo manifest)
         except UnicodeDecodeError:
             continue
+=======
+        except:
+            print('Skipping ' + xml_file)
+>>>>>>> CHANGE (61cb7e omni_crowdin: initial android-11)
     del xf
 
     print('\nCreating a list of pushable translations')
@@ -318,8 +323,13 @@ def local_download(base_path, branch, xml, config):
                     print('Removing ' + xml_file)
                     os.remove(xml_file)
                     break
+<<<<<<< HEAD   (d59f1e crowdin: add private repo manifest)
         except UnicodeDecodeError:
             continue
+=======
+        except:
+            print('Skipping ' + xml_file)
+>>>>>>> CHANGE (61cb7e omni_crowdin: initial android-11)
     del xf
 
 def main():
