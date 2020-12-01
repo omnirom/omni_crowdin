@@ -211,12 +211,15 @@ def download_crowdin(base_path, branch, xml, username, config):
     }
     xf = None
     for xml_file in find_xml(base_path):
-        xf = open(xml_file).read()
-        for line in empty_contents:
-            if line in xf:
-                print('Removing ' + xml_file)
-                os.remove(xml_file)
-                break
+        try:
+            xf = open(xml_file).read()
+            for line in empty_contents:
+                if line in xf:
+                    print('Removing ' + xml_file)
+                    os.remove(xml_file)
+                    break
+        except:
+            print('Skipping ' + xml_file)
     del xf
 
     print('\nCreating a list of pushable translations')
@@ -308,12 +311,15 @@ def local_download(base_path, branch, xml, config):
     }
     xf = None
     for xml_file in find_xml(base_path):
-        xf = open(xml_file).read()
-        for line in empty_contents:
-            if line in xf:
-                print('Removing ' + xml_file)
-                os.remove(xml_file)
-                break
+        try:
+            xf = open(xml_file).read()
+            for line in empty_contents:
+                if line in xf:
+                    print('Removing ' + xml_file)
+                    os.remove(xml_file)
+                    break
+        except:
+            print('Skipping ' + xml_file)
     del xf
 
 def main():
