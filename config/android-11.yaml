@@ -198,6 +198,31 @@ files:
     translation: '/%original_path%-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
+  -
+    source:      '/packages/apps/Gallery2/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/packages/apps/Calendar/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/packages/apps/ExactCalculator/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/packages/apps/Phonograph/app/src/main/res/values/custom_strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/packages/apps/Phonograph/app/src/main/res/values/strings.xml'
+    translation: '/%original_path%-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
 # devices
 #  -
 #    source:      'device/oneplus/oneplus6/DeviceParts/res/values/strings.xml'
