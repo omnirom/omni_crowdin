@@ -1,17 +1,27 @@
 #!/bin/sh
 source ~/crowdin_key.sh
 
-export OMNI_CROWDIN_BASE_PATH=/data3/android/android-rpi/source
+export OMNI_CROWDIN_BASE_PATH=`pwd`
 export OMNI_CROWDIN_BRANCH=android-11
-export OMNI_CROWDIN_DEVICE=omni_rpi4
 
-cd $OMNI_CROWDIN_BASE_PATH
-python3 ./omni_crowdin/crowdin_sync.py --username maxwen --download
+if [ ! -f "./omni_crowdin/crowdin_sync.py" ]; then
+    echo "Must be started in build root folder"
+    exit 0
+fi
 
-#python3 ./omni_crowdin/crowdin_sync.py --username maxwen --local-download
+if [ -z $OMNI_CROWDIN_USER ]; then
+    "$OMNI_CROWDIN_USER must be set"
+    exit 0
+fi
+
+python3 ./omni_crowdin/crowdin_sync.py --username $OMNI_CROWDIN_USER --download
+
+# with test build for a device before uploading
+#python3 ./omni_crowdin/crowdin_sync.py --username $OMNI_CROWDIN_USER --local-download
 #. ./build/envsetup.sh
-#brunch $OMNI_CROWDIN_DEVICE
+#brunch <device>
 #if [ $? -eq 0 ]; then
-#    python ./omni_crowdin/crowdin_sync.py --username maxwen --download
+#    python3 ./omni_crowdin/crowdin_sync.py --username $OMNI_CROWDIN_USER --download
 #fi
 
+exit 1

@@ -1,0 +1,8 @@
+-must be started in build root folder
+-if uploading for first time check comments in jenkins_crowdin_upload.sh 
+-make sure you have synced all the device folders in your local tree (manifest)
+-crowdin must be in path  https://github.com/crowdin/crowdin-cli
+-project config must be in ~/crowdin_key.sh and must contain
+export OMNI_CROWDIN_ACCESS_TOKEN=<your token>
+export OMNI_CROWDIN_PROJECT_ID=<project id>
+export OMNI_CROWDIN_USER=<gerrit user>

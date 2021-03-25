@@ -29,6 +29,8 @@ import git
 import os
 import subprocess
 import sys
+import re
+from datetime import date
 
 from xml.dom import minidom
 
@@ -83,7 +85,7 @@ def push_as_commit(base_path, path, name, branch, username):
     # Push commit
     try:
         repo.git.push('ssh://%s@gerrit.omnirom.org:29418/%s' % (username, name),
-                      'HEAD:refs/for/%s%%topic=translation' % branch)
+                      'HEAD:refs/for/%s%%topic=translation-%s' % (branch, str(date.today())))
         print('Successfully pushed commit for %s' % name)
     except:
         print('Failed to push commit for %s' % name, file=sys.stderr)
@@ -125,10 +127,10 @@ def parse_args():
 # ################################# PREPARE ################################## #
 
 def check_dependencies():
-    # Check for Ruby version of crowdin-cli
-    cmd = ['gem', 'list', 'crowdin-cli', '-i']
+    # Check for Ruby version of crowdin
+    cmd = ['crowdin', '-h']
     if run_subprocess(cmd, silent=True)[1] != 0:
-        print('You have not installed crowdin-cli.', file=sys.stderr)
+        print('You have not installed crowdin.', file=sys.stderr)
         return False
     return True
 
@@ -157,45 +159,45 @@ def check_files(files):
 def upload_sources_crowdin(branch, config):
     if config:
         print('\nUploading sources to Crowdin (custom config)')
-        check_run(['crowdin-cli',
+        check_run(['crowdin', 'upload', 'sources',
                    '--config=%s/config/%s' % (_DIR, config),
-                   'upload', 'sources', '--branch=%s' % branch])
+                   '--branch=%s' % branch])
     else:
         print('\nUploading sources to Crowdin (AOSP supported languages)')
-        check_run(['crowdin-cli',
+        check_run(['crowdin','upload', 'sources',
                    '--config=%s/config/%s.yaml' % (_DIR, branch),
-                   'upload', 'sources', '--branch=%s' % branch])
+                   '--branch=%s' % branch])
 
 def upload_translations_crowdin(branch, config):
     if config:
         print('\nUploading translations to Crowdin (custom config)')
-        check_run(['crowdin-cli',
+        check_run(['crowdin', 'upload', 'translations',
                    '--config=%s/config/%s' % (_DIR, config),
-                   'upload', 'translations', '--branch=%s' % branch,
-                   '--no-import-duplicates', '--import-eq-suggestions',
+                   '--branch=%s' % branch,
+                   '--import-eq-suggestions',
                    '--auto-approve-imported'])
     else:
         print('\nUploading translations to Crowdin '
               '(AOSP supported languages)')
-        check_run(['crowdin-cli',
+        check_run(['crowdin', 'upload', 'translations',
                    '--config=%s/config/%s.yaml' % (_DIR, branch),
-                   'upload', 'translations', '--branch=%s' % branch,
-                   '--no-import-duplicates', '--import-eq-suggestions',
+                   '--branch=%s' % branch,
+                   '--import-eq-suggestions',
                    '--auto-approve-imported'])
 
 
 def download_crowdin(base_path, branch, xml, username, config):
     if config:
         print('\nDownloading translations from Crowdin (custom config)')
-        check_run(['crowdin-cli',
+        check_run(['crowdin', 'download',
                    '--config=%s/config/%s' % (_DIR, config),
-                   'download', '--branch=%s' % branch])
+                   '--branch=%s' % branch])
     else:
         print('\nDownloading translations from Crowdin '
               '(AOSP supported languages)')
-        check_run(['crowdin-cli',
+        check_run(['crowdin', 'download',
                    '--config=%s/config/%s.yaml' % (_DIR, branch),
-                   'download', '--branch=%s' % branch])
+                   '--branch=%s' % branch])
 
 
     print('\nRemoving useless empty translation files')
@@ -229,14 +231,17 @@ def download_crowdin(base_path, branch, xml, username, config):
         files = ['%s/config/%s' % (_DIR, config)]
     else:
         files = ['%s/config/%s.yaml' % (_DIR, branch)]
+    prefix = ("^.*File.*%s") % (branch)
     for c in files:
-        cmd = ['crowdin-cli', '--config=%s' % c, 'list', 'project',
-               '--branch=%s' % branch]
+        cmd = ['crowdin', 'list', 'project', '--config=%s' % c, 
+               '--branch=%s' % branch, '--no-colors']
         comm, ret = run_subprocess(cmd)
         if ret != 0:
             sys.exit(ret)
+        # remove chunk from output
+        # ✔️  File 'android-11/packages/apps/OmniClock/res/values/custom_strings.xml'
         for p in str(comm[0]).split("\n"):
-            paths.append(p.replace('/%s' % branch, ''))
+            paths.append(re.sub(prefix, '', p))
 
     print('\nUploading translations to Gerrit')
     items = [x for sub in xml for x in sub.getElementsByTagName('project')]
@@ -248,8 +253,8 @@ def download_crowdin(base_path, branch, xml, username, config):
             continue
 
         if "/res" not in path:
-            print('WARNING: Cannot determine project root dir of '
-                  '[%s], skipping.' % path)
+            #print('WARNING: Cannot determine project root dir of '
+            #      '[%s], skipping.' % path)
             continue
         result = path.split('/res')[0].strip('/')
         if result == path.strip('/'):
@@ -287,15 +292,15 @@ def download_crowdin(base_path, branch, xml, username, config):
 def local_download(base_path, branch, xml, config):
     if config:
         print('\nDownloading translations from Crowdin (custom config)')
-        check_run(['crowdin-cli',
+        check_run(['crowdin', 'download',
                    '--config=%s/config/%s' % (_DIR, config),
-                   'download', '--branch=%s' % branch])
+                   '--branch=%s' % branch])
     else:
         print('\nDownloading translations from Crowdin '
               '(AOSP supported languages)')
-        check_run(['crowdin-cli',
+        check_run(['crowdin', 'download',
                    '--config=%s/config/%s.yaml' % (_DIR, branch),
-                   'download', '--branch=%s' % branch])
+                   '--branch=%s' % branch])
 
 
     print('\nRemoving useless empty translation files')
@@ -354,11 +359,15 @@ def main():
         print('no omni-private.xml')
         sys.exit(1)
 
-    xml_extra3 = load_xml(x='%s/config/%s_extra_packages.xml'
-                           % (_DIR, default_branch))
+    xml_extra3 = load_xml(x='%s/android/omni-extra.xml' % base_path)
     if xml_extra3 is None:
-        print('no extra_packages.xml')
+        print('no omni-extra.xml')
         sys.exit(1)
+
+    xml_extra4 = load_xml(x='%s/config/%s_extra_packages.xml'
+                           % (_DIR, default_branch))
+    if xml_extra4 is None:
+        print('no extra_packages.xml')
 
     if args.config:
         files = ['%s/config/%s' % (_DIR, args.config)]
@@ -376,10 +385,10 @@ def main():
     if args.upload_translations:
         upload_translations_crowdin(default_branch, args.config)
     if args.download:
-        download_crowdin(base_path, default_branch, (xml_android, xml_extra1, xml_extra2, xml_extra3),
+        download_crowdin(base_path, default_branch, (xml_android, xml_extra1, xml_extra2, xml_extra3, xml_extra4),
                          args.username, args.config)
     if args.local_download:
-        local_download(base_path, default_branch, (xml_android, xml_extra1, xml_extra2, xml_extra3),
+        local_download(base_path, default_branch, (xml_android, xml_extra1, xml_extra2, xml_extra3, xml_extra4),
                          args.config)
 
     if _COMMITS_CREATED:
