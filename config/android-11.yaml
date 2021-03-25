@@ -16,10 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api_key_env: OMNI_CROWDIN_API_KEY
-base_path_env: OMNI_CROWDIN_BASE_PATH
+api_token_env: "OMNI_CROWDIN_ACCESS_TOKEN"
+base_path_env: "OMNI_CROWDIN_BASE_PATH"
 base_path_contains_branch_subfolders: false
-project_identifier: OmniROM
+project_id_env: "OMNI_CROWDIN_PROJECT_ID"
 preserve_hierarchy: true
 
 files:
@@ -28,7 +28,7 @@ files:
 # framework-res
   -
     source:      '/frameworks/base/core/res/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/frameworks/base/core/res/res/values-%android_code%/%original_file_name%'
     languages_mapping: &anchor
       android_code:
         af: af
@@ -91,7 +91,7 @@ files:
 # SystemUI
   -
     source:      '/frameworks/base/packages/SystemUI/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/frameworks/base/packages/SystemUI/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 
@@ -100,136 +100,156 @@ files:
 # OmniGears
   -
     source:      '/packages/apps/OmniGears/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/OmniGears/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 # OmniJaws
   -
     source:      '/packages/services/OmniJaws/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/services/OmniJaws/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 # OmniStyle
   -
     source:      '/packages/apps/OmniStyle/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/OmniStyle/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 # OmniSwitch
   -
     source:      '/packages/apps/OmniSwitch/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/OmniSwitch/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 # OpenDelta
   -
     source:      '/packages/apps/OpenDelta/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/OpenDelta/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 # Settings
   -
     source:      '/packages/apps/Settings/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/Settings/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 
 # Launcher3
   -
     source:      '/packages/apps/Launcher3/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/Launcher3/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 # Dialer
   -
     source:      '/packages/apps/Dialer/java/com/android/dialer/app/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/Dialer/java/com/android/dialer/app/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 # Telephony
-  -
-    source:      '/packages/services/Telephony/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
+#  -
+#    source:      '/packages/services/Telephony/res/values/custom_strings.xml'
+#    translation: '/packages/services/Telephony/res/values-%android_code%/%original_file_name%'
+#    languages_mapping: *anchor
 
 # OmniChange
   -
     source:      '/packages/apps/OmniChange/app/src/main/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/OmniChange/app/src/main/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   -
     source:      '/packages/apps/OmniLib/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/OmniLib/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
-  -
-    source:      '/packages/providers/DownloadProvider/res/values/omni_*.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
+#  -
+#    source:      '/packages/providers/DownloadProvider/res/values/omni_*.xml'
+#    translation: '/packages/providers/DownloadProvider/res/values-%android_code%/%original_file_name%'
+#    languages_mapping: *anchor
 
   -
     source:      '/packages/apps/Messaging/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/Messaging/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   -
     source:      '/packages/apps/OmniRemote/app/src/main/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/OmniRemote/app/src/main/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   -
     source:      '/packages/apps/ThemePicker/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/ThemePicker/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   -
     source:      '/packages/apps/Matlog/app/src/main/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/Matlog/app/src/main/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   -
     source:      '/packages/apps/OmniStore/app/src/main/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/OmniStore/app/src/main/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   -
     source:      '/packages/apps/OmniStoreInstaller/app/src/main/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/OmniStoreInstaller/app/src/main/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   -
     source:      '/packages/apps/Gallery2/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/Gallery2/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   -
     source:      '/packages/apps/Calendar/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/Calendar/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
-  -
-    source:      '/packages/apps/ExactCalculator/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
-    languages_mapping: *anchor
+#  -
+#    source:      '/packages/apps/ExactCalculator/res/values/custom_strings.xml'
+#    translation: '/packages/apps/ExactCalculator/res/values-%android_code%/%original_file_name%'
+#    languages_mapping: *anchor
 
   -
     source:      '/packages/apps/Phonograph/app/src/main/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/Phonograph/app/src/main/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
   -
     source:      '/packages/apps/Phonograph/app/src/main/res/values/strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    translation: '/packages/apps/Phonograph/app/src/main/res/values-%android_code%/%original_file_name%'
     languages_mapping: *anchor
 
 # devices
 #  -
-#    source:      'device/oneplus/oneplus6/DeviceParts/res/values/strings.xml'
-#    translation: '/%original_path%-%android_code%/%original_file_name%'
+#    source:      '/device/oneplus/oneplus6/DeviceParts/res/values/strings.xml'
+#    translation: '/device/oneplus/oneplus6/DeviceParts/res/values-%android_code%/%original_file_name%'
 #    languages_mapping: *anchor
     
-#  -
-#    source:      'device/oneplus/oneplus7pro/DeviceParts/res/values/strings.xml'
-#    translation: '/%original_path%-%android_code%/%original_file_name%'
-#    languages_mapping: *anchor
+  -
+    source:      '/device/oneplus/oneplus7pro/DeviceParts/res/values/strings.xml'
+    translation: '/device/oneplus/oneplus7pro/DeviceParts/res/values-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/device/asus/zenfone6/DeviceParts/res/values/strings.xml'
+    translation: '/device/asus/zenfone6/DeviceParts/res/value-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/device/brcm/rpi4/DeviceParts/res/values/strings.xml'
+    translation: '/device/brcm/rpi4/DeviceParts/res/value-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/device/asus/rog2/DeviceParts/res/values/strings.xml'
+    translation: '/device/asus/rog2/DeviceParts/res/value-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
+
+  -
+    source:      '/device/asus/sm8250-common/DeviceParts/res/values/strings.xml'
+    translation: '/device/asus/sm8250-common/DeviceParts/res/value-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
