@@ -16,16 +16,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api_key_env: OMNI_CROWDIN_API_KEY
-base_path_env: OMNI_CROWDIN_BASE_PATH
+api_token_env: "OMNI_CROWDIN_ACCESS_TOKEN"
+base_path_env: "OMNI_CROWDIN_BASE_PATH"
 base_path_contains_branch_subfolders: false
-project_identifier: OmniROM
+project_id_env: "OMNI_CROWDIN_PROJECT_ID"
 preserve_hierarchy: true
 
 files:
   -
-    source:      '/packages/apps/ThemePicker/res/values/custom_strings.xml'
-    translation: '/%original_path%-%android_code%/%original_file_name%'
+    source:      '/device/asus/zenfone6/DeviceParts/res/values/strings.xml'
+    translation: '/device/asus/zenfone6/DeviceParts/res/value-%android_code%/%original_file_name%'
     languages_mapping: &anchor
       android_code:
         af: af
@@ -85,3 +85,7 @@ files:
         zh-TW: zh-rTW
         zu: zu
 
+  -
+    source:      '/device/brcm/rpi4/DeviceParts/res/values/strings.xml'
+    translation: '/device/brcm/rpi4/DeviceParts/res/value-%android_code%/%original_file_name%'
+    languages_mapping: *anchor
