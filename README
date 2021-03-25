@@ -1,0 +1,4 @@
+-must be started in build root folder
+-if uploading for first time check comments in jenkins_crowdin_upload.sh 
+-make sure you have synced all the device folders in your local tree (manifest)
+-crowdin must be in path  https://github.com/crowdin/crowdin-cli
