@@ -2,7 +2,7 @@
 source ~/crowdin_key.sh
 
 export OMNI_CROWDIN_BASE_PATH=`pwd`
-export OMNI_CROWDIN_BRANCH=android-11
+export OMNI_CROWDIN_BRANCH=android-13.0
 
 if [ ! -f "./omni_crowdin/crowdin_sync.py" ]; then
     echo "Must be started in build root folder"
